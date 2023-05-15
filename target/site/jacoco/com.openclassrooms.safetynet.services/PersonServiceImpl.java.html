@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="fr"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>PersonServiceImpl.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">safetynet</a> &gt; <a href="index.source.html" class="el_package">com.openclassrooms.safetynet.services</a> &gt; <span class="el_source">PersonServiceImpl.java</span></div><h1>PersonServiceImpl.java</h1><pre class="source lang-java linenums">package com.openclassrooms.safetynet.services;
+
+import java.util.ArrayList;
+import java.util.List;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+import org.springframework.stereotype.Service;
+
+import com.openclassrooms.safetynet.model.ChildAdress;
+import com.openclassrooms.safetynet.model.FoyerAdress;
+import com.openclassrooms.safetynet.model.Person;
+import com.openclassrooms.safetynet.model.PersonInfo;
+import com.openclassrooms.safetynet.repository.PersonRepository;
+
+@Service
+public class PersonServiceImpl implements PersonService {
+
+<span class="fc" id="L18">		private static final Logger logger = LogManager.getLogger(PersonServiceImpl.class);</span>
+		private final PersonRepository personRepository;
+		
+		private final MedicalrecordsService medicalrecordsService;
+		
+		public PersonServiceImpl(PersonRepository personRepository, MedicalrecordsService medicalrecordsService) {
+<span class="fc" id="L24">		super();</span>
+<span class="fc" id="L25">		this.personRepository = personRepository;</span>
+<span class="fc" id="L26">		this.medicalrecordsService = medicalrecordsService;</span>
+<span class="fc" id="L27">	}</span>
+
+		public List&lt;PersonInfo&gt; getPersonInfo(String frstName, String lstName) {
+			
+			List&lt;Person&gt; lstPersonSameLstName;
+			
+<span class="fc" id="L33">			lstPersonSameLstName = personRepository.getPersonByLstName(lstName);</span>
+<span class="fc bfc" id="L34" title="All 2 branches covered.">			if(lstPersonSameLstName == null) {</span>
+<span class="fc" id="L35">				logger.info(&quot;getPersonInfo - No Person by name : &quot; + lstName);</span>
+<span class="fc" id="L36">				return null;</span>
+			}
+			
+<span class="fc" id="L39">			List&lt;PersonInfo&gt; personInfoList = new ArrayList&lt;&gt;();</span>
+<span class="fc bfc" id="L40" title="All 2 branches covered.">			for(int iPerson = 0; iPerson &lt; lstPersonSameLstName.size(); iPerson++) {</span>
+<span class="fc" id="L41">				PersonInfo personInfo = new PersonInfo();</span>
+<span class="fc" id="L42">				personInfo.setLastName(lstName);</span>
+<span class="fc" id="L43">				personInfo.setAddress(lstPersonSameLstName.get(iPerson).getAddress());</span>
+<span class="fc" id="L44">				personInfo.setEmail(lstPersonSameLstName.get(iPerson).getEmail());</span>
+<span class="fc" id="L45">				personInfo.setAge(medicalrecordsService.getAgeFromPerson(lstPersonSameLstName.get(iPerson)));</span>
+<span class="fc" id="L46">				personInfo.setMedications(medicalrecordsService.getMedicationFromPerson(lstPersonSameLstName.get(iPerson)));</span>
+<span class="fc" id="L47">				personInfo.setAllergies(medicalrecordsService.getAllergieFromPerson(lstPersonSameLstName.get(iPerson)));</span>
+<span class="fc" id="L48">				personInfoList.add(personInfo);</span>
+			}
+<span class="fc" id="L50">			return personInfoList;</span>
+		}
+			
+			
+		public Person updatePerson(Person person) {
+			
+<span class="fc bfc" id="L56" title="All 2 branches covered.">			if(personRepository.updatePerson(person)) {</span>
+<span class="fc" id="L57">				logger.info(&quot;Update Person : &quot; + person);</span>
+<span class="fc" id="L58">				return person;</span>
+			}
+<span class="fc" id="L60">			logger.info(&quot;Default to Update Person : &quot; + person);</span>
+<span class="fc" id="L61">			return null;</span>
+		}
+			
+			
+		public Person deletePerson(String firstName, String lastName) {
+			
+			Person personToDelete;
+<span class="fc" id="L68">			personToDelete = personRepository.getPersonByFstNameLstName(firstName, lastName);</span>
+<span class="fc bfc" id="L69" title="All 2 branches covered.">			if(personToDelete != null) {</span>
+<span class="pc bpc" id="L70" title="1 of 2 branches missed.">				if(personRepository.deletePerson(personToDelete)) {</span>
+<span class="fc" id="L71">					logger.info(&quot;Delete Person : &quot; + personToDelete);</span>
+<span class="fc" id="L72">					return personToDelete;</span>
+				}
+			}
+<span class="fc" id="L75">			logger.info(&quot;Default to Delete Person : &quot; + firstName + &quot; &quot; + lastName);</span>
+<span class="fc" id="L76">			return null;</span>
+		}
+
+
+		public List&lt;String&gt; getCommunityEmail(String city) {
+			List&lt;String&gt; lstCommunityEmail;
+<span class="fc" id="L82">			lstCommunityEmail = personRepository.getDistinctEmailByCityFromPerson(city);</span>
+<span class="fc bfc" id="L83" title="All 2 branches covered.">			if(lstCommunityEmail == null) </span>
+<span class="fc" id="L84">				logger.info(&quot;No Community Email in city : &quot; + city);</span>
+<span class="fc" id="L85">			return lstCommunityEmail;</span>
+		}
+
+		
+		public List&lt;ChildAdress&gt; getChildFromAddress(String address) {
+			
+			List&lt;Person&gt; lstPersonAdress;
+<span class="fc" id="L92">			List&lt;String&gt; lstAddress = new ArrayList&lt;String&gt;();</span>
+			
+<span class="fc" id="L94">			lstAddress.add(address);</span>
+<span class="fc" id="L95">			lstPersonAdress = personRepository.getPersonByAddress(lstAddress);</span>
+<span class="fc bfc" id="L96" title="All 2 branches covered.">			if(lstPersonAdress == null) {</span>
+<span class="fc" id="L97">				logger.info(&quot;No Child at the address : &quot; + address);</span>
+<span class="fc" id="L98">				return null;</span>
+			}
+			
+<span class="fc" id="L101">			List&lt;ChildAdress&gt; childAdresslist = new ArrayList&lt;&gt;();</span>
+<span class="fc bfc" id="L102" title="All 2 branches covered.">			for(int iPersonAdr = 0; iPersonAdr &lt; lstPersonAdress.size(); iPersonAdr++) {</span>
+<span class="fc bfc" id="L103" title="All 2 branches covered.">				if(medicalrecordsService.isAChild(lstPersonAdress.get(iPersonAdr))) {</span>
+<span class="fc" id="L104">					ChildAdress childadress = new ChildAdress();</span>
+<span class="fc" id="L105">					childadress.setFirstName(lstPersonAdress.get(iPersonAdr).getFirstName());</span>
+<span class="fc" id="L106">					childadress.setLastName(lstPersonAdress.get(iPersonAdr).getLastName());</span>
+<span class="fc" id="L107">					childadress.setAddress(lstPersonAdress.get(iPersonAdr).getAddress());</span>
+<span class="fc" id="L108">					childadress.setAge(medicalrecordsService.getAgeFromPerson(lstPersonAdress.get(iPersonAdr)));</span>
+<span class="fc" id="L109">					childadress.setFoyerAdress(getOtherPersonFromFoyer(lstPersonAdress, lstPersonAdress.get(iPersonAdr)));</span>
+<span class="fc" id="L110">					childAdresslist.add(childadress);</span>
+				}
+			}
+<span class="fc" id="L113">			return childAdresslist;</span>
+		}
+		
+		public List&lt;FoyerAdress&gt; getOtherPersonFromFoyer(List&lt;Person&gt; lstPersonAdress, Person personToExclude) {
+<span class="fc" id="L117">			List&lt;FoyerAdress&gt; foyerSameAdresslist = new ArrayList&lt;&gt;();</span>
+			
+<span class="fc bfc" id="L119" title="All 2 branches covered.">			for(int iPerson = 0; iPerson &lt; lstPersonAdress.size(); iPerson++) {</span>
+<span class="fc bfc" id="L120" title="All 2 branches covered.">				if(lstPersonAdress.get(iPerson).getFirstName().equals(personToExclude.getFirstName()) &amp;&amp;</span>
+<span class="pc bpc" id="L121" title="1 of 2 branches missed.">				   lstPersonAdress.get(iPerson).getLastName().equals(personToExclude.getLastName())) {</span>
+					// Pas d'ajout de l'enfant dans la liste
+				}
+				else {
+<span class="fc" id="L125">					FoyerAdress foyerAdress = new FoyerAdress();</span>
+<span class="fc" id="L126">					foyerAdress.setFirstName(lstPersonAdress.get(iPerson).getFirstName());</span>
+<span class="fc" id="L127">					foyerAdress.setLastName(lstPersonAdress.get(iPerson).getLastName());</span>
+<span class="fc" id="L128">					foyerSameAdresslist.add(foyerAdress);</span>
+				}
+			}
+<span class="fc" id="L131">			return foyerSameAdresslist;</span>
+		}
+
+		public Person addPerson(Person person) {
+			Person personToAdd;
+<span class="fc" id="L136">			personToAdd = personRepository.getPersonByFstNameLstName(person.getFirstName(), person.getLastName());</span>
+<span class="fc bfc" id="L137" title="All 2 branches covered.">			if(personToAdd == null) {</span>
+<span class="pc bpc" id="L138" title="1 of 2 branches missed.">				if(personRepository.addPerson(person)) {</span>
+<span class="fc" id="L139">					logger.info(&quot;Add Person : &quot; + person);</span>
+<span class="fc" id="L140">					return person;</span>
+				}
+			}
+<span class="fc" id="L143">			logger.info(&quot;Default to Add Person : &quot; + person);</span>
+<span class="fc" id="L144">			return null;</span>
+		}
+
+		
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.8.202204050719</span></div></body></html>

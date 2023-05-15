@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="fr"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>FirestationsController.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">safetynet</a> &gt; <a href="index.source.html" class="el_package">com.openclassrooms.safetynet.controller</a> &gt; <span class="el_source">FirestationsController.java</span></div><h1>FirestationsController.java</h1><pre class="source lang-java linenums">package com.openclassrooms.safetynet.controller;
+
+import java.util.List;
+
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.openclassrooms.safetynet.model.Firestations;
+import com.openclassrooms.safetynet.model.PersonFireAddress;
+import com.openclassrooms.safetynet.model.PersonStationNumber;
+import com.openclassrooms.safetynet.services.FirestationsService;
+
+@RestController
+public class FirestationsController {
+
+	private FirestationsService firestationsService;
+	
+<span class="fc" id="L25">	public FirestationsController(FirestationsService firestationsService) {</span>
+<span class="fc" id="L26">		this.firestationsService = firestationsService;</span>
+<span class="fc" id="L27">	}</span>
+	
+	@PostMapping(&quot;/firestation&quot;)
+    public ResponseEntity&lt;Firestations&gt; addFireStation(@RequestBody Firestations fireStation) {
+<span class="fc" id="L31">	    Firestations createdFireStation = firestationsService.addFireStation(fireStation);</span>
+<span class="fc bfc" id="L32" title="All 2 branches covered.">	    if (createdFireStation != null) {</span>
+<span class="fc" id="L33">	        return ResponseEntity.status(HttpStatus.OK).body(createdFireStation);</span>
+	    } else {
+<span class="fc" id="L35">	    	return ResponseEntity.status(HttpStatus.CONFLICT).body(null);</span>
+	    }
+	}
+	
+	 
+	@PutMapping(&quot;/firestation&quot;)
+	public  ResponseEntity&lt;Firestations&gt; updateFireStation(@RequestBody Firestations fireStation) {
+<span class="fc" id="L42">		Firestations updateFireStation = firestationsService.updateFireStation(fireStation);</span>
+<span class="fc bfc" id="L43" title="All 2 branches covered.">	    if (updateFireStation != null) {</span>
+<span class="fc" id="L44">	        return ResponseEntity.status(HttpStatus.OK).body(updateFireStation);</span>
+	    } else {
+<span class="fc" id="L46">	    	return ResponseEntity.status(HttpStatus.CONFLICT).body(null);</span>
+	    } 
+	}
+	
+	@DeleteMapping(&quot;/firestation&quot;)
+	public  ResponseEntity&lt;Firestations&gt; deleteFireStation(@RequestBody Firestations fireStation) {
+<span class="fc" id="L52">	    Firestations deleteFireStation = firestationsService.deleteFireStation(fireStation);</span>
+<span class="fc bfc" id="L53" title="All 2 branches covered.">	    if (deleteFireStation != null) {</span>
+<span class="fc" id="L54">	    	return ResponseEntity.status(HttpStatus.OK).body(deleteFireStation);</span>
+	    } else {
+<span class="fc" id="L56">	    	return ResponseEntity.status(HttpStatus.CONFLICT).body(null);</span>
+	    }
+	}
+	
+	@GetMapping(&quot;/firestation&quot;)
+	public ResponseEntity&lt;List&lt;PersonStationNumber&gt;&gt; getPersonFromStation(@RequestParam(&quot;station_number&quot;) List&lt;String&gt; station_number) {
+		
+<span class="fc" id="L63">		System.out.println(&quot;station_number :&quot;+station_number+&quot;:&quot;);</span>
+<span class="fc" id="L64">		List&lt;PersonStationNumber&gt; personStationNumber = firestationsService.getPersonFromStation(station_number);</span>
+<span class="fc bfc" id="L65" title="All 2 branches covered.">		if (personStationNumber != null) {</span>
+<span class="fc" id="L66">	           return ResponseEntity.status(HttpStatus.OK).body(personStationNumber);</span>
+	       } else {
+<span class="fc" id="L68">	    	   return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);</span>
+	       }
+	}
+	
+	
+	@GetMapping(&quot;/phoneAlert&quot;)
+	public ResponseEntity&lt;List&lt;String&gt;&gt; getPhonePersonFromStation(@RequestParam(&quot;firestation_number&quot;) List&lt;String&gt; firestation_number) {
+<span class="fc" id="L75">		List&lt;String&gt; personPhoneFromStationNumber = firestationsService.getPhonePersonFromStation(firestation_number);</span>
+<span class="fc bfc" id="L76" title="All 2 branches covered.">		if (personPhoneFromStationNumber != null) {</span>
+<span class="fc" id="L77">	           return ResponseEntity.status(HttpStatus.OK).body(personPhoneFromStationNumber);</span>
+	       } else {
+<span class="fc" id="L79">	    	   return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);</span>
+	       }
+	}
+	
+	@GetMapping(&quot;/fire&quot;)
+	public ResponseEntity&lt;List&lt;PersonFireAddress&gt;&gt; getPersonFromAddress(@RequestParam(&quot;address&quot;) List&lt;String&gt; address) {
+<span class="fc" id="L85">		List&lt;PersonFireAddress&gt; personFromAddress = firestationsService.getpersonFromAddress(address);</span>
+<span class="fc bfc" id="L86" title="All 2 branches covered.">		if (personFromAddress != null) {</span>
+<span class="fc" id="L87">	           return ResponseEntity.status(HttpStatus.OK).body(personFromAddress);</span>
+	       } else {
+<span class="fc" id="L89">	    	   return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);</span>
+	       }
+	}
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.8.202204050719</span></div></body></html>

@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="fr"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>MedicalrecordsController.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">safetynet</a> &gt; <a href="index.source.html" class="el_package">com.openclassrooms.safetynet.controller</a> &gt; <span class="el_source">MedicalrecordsController.java</span></div><h1>MedicalrecordsController.java</h1><pre class="source lang-java linenums">package com.openclassrooms.safetynet.controller;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.openclassrooms.safetynet.model.Medicalrecords;
+import com.openclassrooms.safetynet.services.MedicalrecordsService;
+
+@RestController
+public class MedicalrecordsController {
+	
+	@Autowired
+	private MedicalrecordsService medicalrecordsService;
+	
+<span class="fc" id="L24">	public MedicalrecordsController(MedicalrecordsService medicalrecordsService) {</span>
+<span class="fc" id="L25">		this.medicalrecordsService = medicalrecordsService;</span>
+<span class="fc" id="L26">	}</span>
+
+	@GetMapping(&quot;/medicalrecords&quot;)
+	public ResponseEntity&lt;List&lt;Medicalrecords&gt;&gt; getMedicalrecords() {
+<span class="fc" id="L30">		List&lt;Medicalrecords&gt; medicalrecords = medicalrecordsService.getMedicalrecords();</span>
+<span class="pc bpc" id="L31" title="1 of 2 branches missed.">		if (medicalrecords != null) {</span>
+<span class="fc" id="L32">	           return ResponseEntity.status(HttpStatus.OK).body(medicalrecords);</span>
+	       } else {
+<span class="nc" id="L34">	    	   return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);</span>
+	       }
+	}
+	
+	@PostMapping(&quot;/medicalrecords&quot;)
+    public ResponseEntity&lt;Medicalrecords&gt; addMedicalrecords(@RequestBody Medicalrecords medicalrecord) {
+<span class="fc" id="L40">		Medicalrecords createdMedicalrecord = medicalrecordsService.addMedicalrecords(medicalrecord);</span>
+<span class="fc bfc" id="L41" title="All 2 branches covered.">		    if (createdMedicalrecord != null) {</span>
+<span class="fc" id="L42">		        return ResponseEntity.status(HttpStatus.OK).body(createdMedicalrecord);</span>
+		    } else {
+<span class="fc" id="L44">		    	return ResponseEntity.status(HttpStatus.CONFLICT).body(null);</span>
+		    }
+	}
+	
+	@PutMapping(&quot;/medicalrecords&quot;)
+	public  ResponseEntity&lt;Medicalrecords&gt; updateMedicalrecords(@RequestBody Medicalrecords medicalrecords) {
+<span class="fc" id="L50">		Medicalrecords updateMedicalrecord = medicalrecordsService.updateMedicalrecords(medicalrecords);</span>
+<span class="fc bfc" id="L51" title="All 2 branches covered.">	    if (updateMedicalrecord != null) {</span>
+<span class="fc" id="L52">	        return ResponseEntity.status(HttpStatus.OK).body(updateMedicalrecord);</span>
+	    } else {
+<span class="fc" id="L54">	    	return ResponseEntity.status(HttpStatus.CONFLICT).body(null);</span>
+	    } 
+	}
+
+	@DeleteMapping(&quot;/medicalrecords&quot;)
+	public  ResponseEntity&lt;Medicalrecords&gt; deleteMedicalrecord(@RequestBody Medicalrecords medicalrecords) {
+<span class="fc" id="L60">		Medicalrecords deleteMedicalrecord = medicalrecordsService.deleteMedicalrecords(medicalrecords);</span>
+<span class="fc bfc" id="L61" title="All 2 branches covered.">	    if (deleteMedicalrecord != null) {</span>
+<span class="fc" id="L62">	        return ResponseEntity.status(HttpStatus.OK).body(deleteMedicalrecord);</span>
+	    } else {
+<span class="fc" id="L64">	    	return ResponseEntity.status(HttpStatus.CONFLICT).body(null);</span>
+	    }
+	}
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.8.202204050719</span></div></body></html>

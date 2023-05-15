@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="fr"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>FireAddress.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">safetynet</a> &gt; <a href="index.source.html" class="el_package">com.openclassrooms.safetynet.model</a> &gt; <span class="el_source">FireAddress.java</span></div><h1>FireAddress.java</h1><pre class="source lang-java linenums">package com.openclassrooms.safetynet.model;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import org.springframework.stereotype.Component;
+
+@Component
+public class FireAddress {
+	private String lastName;
+	private String phone;
+	private int age;
+<span class="fc" id="L13">	private List&lt;String&gt; medications = new ArrayList&lt;&gt;();</span>
+<span class="fc" id="L14">	private List&lt;String&gt; allergies = new ArrayList&lt;&gt;();</span>
+	
+<span class="fc" id="L16">	public FireAddress(String lastName, int age, String phone, List&lt;String&gt; medications, List&lt;String&gt; allergies) {</span>
+<span class="fc" id="L17">		this.lastName = lastName;</span>
+<span class="fc" id="L18">		this.age = age;</span>
+<span class="fc" id="L19">		this.phone = phone;</span>
+<span class="fc" id="L20">		this.medications = medications;</span>
+<span class="fc" id="L21">		this.allergies = allergies;</span>
+<span class="fc" id="L22">	}</span>
+<span class="fc" id="L23">	public FireAddress() {</span>
+		// TODO Auto-generated constructor stub
+<span class="fc" id="L25">	}</span>
+	public List&lt;String&gt; getMedications() {
+<span class="fc" id="L27">		return medications;</span>
+	}
+	public void setMedications(List&lt;String&gt; medications) {
+<span class="fc" id="L30">		this.medications = medications;</span>
+<span class="fc" id="L31">	}</span>
+	public List&lt;String&gt; getAllergies() {
+<span class="fc" id="L33">		return allergies;</span>
+	}
+	public void setAllergies(List&lt;String&gt; allergies) {
+<span class="fc" id="L36">		this.allergies = allergies;</span>
+<span class="fc" id="L37">	}</span>
+	public int getAge() {
+<span class="fc" id="L39">		return age;</span>
+	}
+	public void setAge(int age) {
+<span class="fc" id="L42">		this.age = age;</span>
+<span class="fc" id="L43">	}</span>
+	public String getPhone() {
+<span class="fc" id="L45">		return phone;</span>
+	}
+	public void setPhone(String phone) {
+<span class="fc" id="L48">		this.phone = phone;</span>
+<span class="fc" id="L49">	}</span>
+	public String getLastName() {
+<span class="fc" id="L51">		return lastName;</span>
+	}
+	public void setLastName(String lastName) {
+<span class="fc" id="L54">		this.lastName = lastName;</span>
+<span class="fc" id="L55">	}</span>
+	/*public String toString(List&lt;FireAddress&gt; fireAddress) {
+		 return &quot;{&quot; +
+	                &quot; lastName='&quot; + lastName + '\'' +
+	                &quot;, age='&quot; + age + '\'' +
+	                &quot;, medications='&quot; + medications + '\'' +
+	                &quot;, allergies='&quot; + allergies + '\'' +
+	                '}';
+	}
+	public boolean equals(FireAddress obj) {
+		if(obj == this) 
+			return true;
+		return(this.toString().equals(obj.toString()));
+	}*/
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.8.202204050719</span></div></body></html>
