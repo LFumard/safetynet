@@ -56,51 +56,22 @@ public class Medicalrecords {
 <span class="fc" id="L56">		this.allergies = allergies;</span>
 <span class="fc" id="L57">	}</span>
 	
-	/*public Medicalrecords(String firstName, String lastName, String birthdate, List&lt;String&gt; medications, List&lt;String&gt; allergies) {
-		// TODO Auto-generated constructor stub
-		this.firstName = firstName;
-		this.lastName = lastName;
-		this.birthdate = birthdate;
-		this.medications = medications;
-		this.allergies = allergies;
-	}*/
-	/*public void setMedicalrecords(String firstName, String lastName, String birthdate, List&lt;String&gt; medications, List&lt;String&gt; allergies) {
-		this.firstName = firstName;
-		this.lastName = lastName;
-		this.birthdate = birthdate;
-		this.medications = medications;
-		this.allergies = allergies;
-	}*/
 	@Override
 	public boolean equals(Object obj) {
-<span class="fc bfc" id="L76" title="All 2 branches covered.">			if(obj == this) </span>
-<span class="fc" id="L77">				return true;</span>
-<span class="fc" id="L78">			return(this.toString().equals(obj.toString()));</span>
+<span class="fc bfc" id="L61" title="All 2 branches covered.">			if(obj == this) </span>
+<span class="fc" id="L62">				return true;</span>
+<span class="fc" id="L63">			return(this.toString().equals(obj.toString()));</span>
 	}
 	@Override
 	public String toString() {
-<span class="fc" id="L82">		return &quot;{&quot; +</span>
-<span class="fc" id="L83">        &quot; lastName='&quot; + lastName + '\'' +</span>
-<span class="fc" id="L84">        &quot;, firstName='&quot; + firstName + '\'' +</span>
-<span class="fc" id="L85">        &quot;, birthdate='&quot; + birthdate + '\'' +</span>
-<span class="fc" id="L86">        &quot;, allergies='&quot; + allergies + '\'' +</span>
-<span class="fc" id="L87">        &quot;, medications='&quot; + medications + '\'' +</span>
-<span class="fc" id="L88">        '}';</span>
+<span class="fc" id="L67">		return &quot;{&quot; +</span>
+        &quot; lastName='&quot; + lastName + '\'' +
+        &quot;, firstName='&quot; + firstName + '\'' +
+        &quot;, birthdate='&quot; + birthdate + '\'' +
+        &quot;, allergies='&quot; + allergies + '\'' +
+        &quot;, medications='&quot; + medications + '\'' +
+        '}';
 	}
-	
-	
-	/*@Autowired
-	public Medicalrecords(String firstName, String lastName, String birthdate, List&lt;String&gt; medications,
-			List&lt;String&gt; allergies) {
-		super();
-		this.firstName = firstName;
-		this.lastName = lastName;
-		this.birthdate = birthdate;
-		this.medications = medications;
-		this.allergies = allergies;
-	}*/
-	
-	
 	
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.8.202204050719</span></div></body></html>

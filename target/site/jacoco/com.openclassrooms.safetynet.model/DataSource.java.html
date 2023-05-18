@@ -7,13 +7,14 @@ import java.util.List;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import jakarta.annotation.PostConstruct;
 
 @Component
-<span class="fc" id="L16">public class DataSource {</span>
+<span class="fc" id="L17">public class DataSource {</span>
 	public List &lt;Person&gt; people;
 	public List &lt;Firestations&gt; firestations;
 	public List &lt;Medicalrecords&gt; medicalrecords;
@@ -21,46 +22,50 @@ import jakarta.annotation.PostConstruct;
 	public DataSource dataSource; 
 	
 	public List&lt;Person&gt; getPersons() {
-<span class="fc" id="L24">		return people;</span>
+<span class="fc" id="L25">		return people;</span>
 	}
+	
+	@Value(&quot;${data.jsonFilePath}&quot;)
+	private String filePath;
+	
 	public void setPersons(List&lt;Person&gt; persons) {
-<span class="nc" id="L27">		this.people = persons;</span>
-<span class="nc" id="L28">	}</span>
+<span class="nc" id="L32">		this.people = persons;</span>
+<span class="nc" id="L33">	}</span>
 	public List&lt;Firestations&gt; getFirestations() {
-<span class="fc" id="L30">		return firestations;</span>
+<span class="fc" id="L35">		return firestations;</span>
 	}
 	public void setFirestations(List&lt;Firestations&gt; firestations) {
-<span class="fc" id="L33">		this.firestations = firestations;</span>
-<span class="fc" id="L34">	}</span>
+<span class="fc" id="L38">		this.firestations = firestations;</span>
+<span class="fc" id="L39">	}</span>
 	public List&lt;Medicalrecords&gt; getMedicalrecords() {
-<span class="fc" id="L36">		return medicalrecords;</span>
+<span class="fc" id="L41">		return medicalrecords;</span>
 	}
 	public void setMedicalrecords(List&lt;Medicalrecords&gt; medicalrecords) {
-<span class="fc" id="L39">		this.medicalrecords = medicalrecords;</span>
-<span class="fc" id="L40">	}</span>
+<span class="fc" id="L44">		this.medicalrecords = medicalrecords;</span>
+<span class="fc" id="L45">	}</span>
 
-<span class="fc" id="L42">	private static final Logger logger = LogManager.getLogger(DataSource.class);</span>
+<span class="fc" id="L47">	private static final Logger logger = LogManager.getLogger(DataSource.class);</span>
 	
 	@PostConstruct
 	public void saveJsonData() { 
-<span class="fc" id="L46">		logger.info(&quot;Begin loading JSON data file&quot;);</span>
+<span class="fc" id="L51">		logger.info(&quot;Begin loading JSON data file&quot;);</span>
 		try {
 			
-<span class="fc" id="L49">			byte[] jsonData = Files.readAllBytes(Paths.get(&quot;target\\classes\\data.json&quot;));</span>
+<span class="fc" id="L54">			byte[] jsonData = Files.readAllBytes(Paths.get(filePath));</span>
 	
-<span class="fc" id="L51">			ObjectMapper objectMapper = new ObjectMapper();</span>
+<span class="fc" id="L56">			ObjectMapper objectMapper = new ObjectMapper();</span>
 	
-<span class="fc" id="L53">			dataSource = objectMapper.readValue(jsonData, DataSource.class);</span>
+<span class="fc" id="L58">			dataSource = objectMapper.readValue(jsonData, DataSource.class);</span>
 		
-<span class="fc" id="L55">			this.people = dataSource.getPersons();</span>
-<span class="fc" id="L56">			this.firestations = dataSource.getFirestations();</span>
-<span class="fc" id="L57">			this.medicalrecords = dataSource.getMedicalrecords();</span>
+<span class="fc" id="L60">			this.people = dataSource.getPersons();</span>
+<span class="fc" id="L61">			this.firestations = dataSource.getFirestations();</span>
+<span class="fc" id="L62">			this.medicalrecords = dataSource.getMedicalrecords();</span>
 			
-<span class="pc" id="L59">		} catch (IOException e) {</span>
-<span class="nc" id="L60">            logger.error(&quot;Error while parsing input json file : &quot; + e.getMessage());</span>
-        }
+<span class="nc" id="L64">		} catch (IOException e) {</span>
+<span class="nc" id="L65">            logger.error(&quot;Error while parsing input json file : &quot; + e.getMessage());</span>
+<span class="fc" id="L66">        }</span>
 
-<span class="fc" id="L63">        logger.info(&quot;End loading JSON data file&quot;);</span>
-<span class="fc" id="L64">	}</span>
+<span class="fc" id="L68">        logger.info(&quot;End loading JSON data file&quot;);</span>
+<span class="fc" id="L69">	}</span>
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.8.202204050719</span></div></body></html>

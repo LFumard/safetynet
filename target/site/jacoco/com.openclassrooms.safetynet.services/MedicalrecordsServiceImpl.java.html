@@ -97,7 +97,7 @@ public class MedicalrecordsServiceImpl implements MedicalrecordsService {
 <span class="fc" id="L97">	            logger.info(&quot;Birthdate no valid &quot; + e.getMessage());</span>
 <span class="nc" id="L98">	        } catch (RuntimeException e) {</span>
 <span class="nc" id="L99">	            logger.info(&quot;Birthdate no valid &quot; + e.getMessage());</span>
-	        }
+<span class="fc" id="L100">	        }</span>
 <span class="fc" id="L101">	        return 0;</span>
 	    }
 
@@ -105,90 +105,6 @@ public class MedicalrecordsServiceImpl implements MedicalrecordsService {
 		public boolean isAChild(Person person) {
 <span class="fc bfc" id="L106" title="All 2 branches covered.">			return(getAgeFromPerson(person) &lt;= 18);</span>
 		}
-		
-		/*@Override
-		public Medicalrecords updateMedicalrecords(Medicalrecords medicalrecords) {
-			for(int i = 0; i &lt; dataSource.getMedicalrecords().size(); i++) {
-				System.out.println(&quot;BOUCLE i = &quot; + i);
-				if(dataSource.getMedicalrecords().get(i).getFirstName().equals(medicalrecords.getFirstName())  &amp;&amp;
-				   dataSource.getMedicalrecords().get(i).getLastName().equals(medicalrecords.getLastName())) {
-					
-					 dataSource.getMedicalrecords().get(i).setMedicalrecords(medicalrecords.getFirstName(), 
-																			   medicalrecords.getLastName(), 
-																			   medicalrecords.getBirthdate(), 
-							                                                   medicalrecords.getMedications(), 
-							                                                   medicalrecords.getAllergies()); 
-					 logger.info(&quot;Update MedicalRecord : &quot; + medicalrecords.getFirstName() + &quot; &quot; + medicalrecords.getLastName()); 
-					 System.out.println(&quot;END OK updateMedicalrecords with :&quot; + medicalrecords.toString());
-					 return medicalrecords;
-				}
-			}
-			logger.info(&quot;Error update MedicalRecord (Person not exist) : &quot; + medicalrecords.getFirstName() + &quot; &quot; + medicalrecords.getLastName()); 
-			return null;
-		}*/
-		
-		/*@Override
-		public Medicalrecords updateMedicalrecords(Medicalrecords medicalrecords) {
-			System.out.println(&quot;BEGIN updateMedicalrecords with : / SIZE = &quot; + medicalrecords + dataSource.getMedicalrecords().size());
-			for(int i = 0; i &lt; dataSource.getMedicalrecords().size(); i++) {
-				System.out.println(&quot;BOUCLE i = &quot; + i);
-				if(dataSource.getMedicalrecords().get(i).getFirstName().equals(medicalrecords.getFirstName())  &amp;&amp;
-				   dataSource.getMedicalrecords().get(i).getLastName().equals(medicalrecords.getLastName())) {
-					
-					 dataSource.getMedicalrecords().get(i).setMedicalrecords(medicalrecords.getFirstName(), 
-																			   medicalrecords.getLastName(), 
-																			   medicalrecords.getBirthdate(), 
-							                                                   medicalrecords.getMedications(), 
-							                                                   medicalrecords.getAllergies()); 
-					 logger.info(&quot;Update MedicalRecord : &quot; + medicalrecords.getFirstName() + &quot; &quot; + medicalrecords.getLastName()); 
-					 System.out.println(&quot;END OK updateMedicalrecords with :&quot; + medicalrecords.toString());
-					 return medicalrecords;
-				}
-			}
-			logger.info(&quot;Error update MedicalRecord (Person not exist) : &quot; + medicalrecords.getFirstName() + &quot; &quot; + medicalrecords.getLastName()); 
-			return null;
-		}*/
-
-		/*@Override
-		public Medicalrecords deleteMedicalrecords(Medicalrecords medicalrecords) {
-			for(int i = 0; i &lt; dataSource.getMedicalrecords().size(); i++) {
-				if(dataSource.getMedicalrecords().get(i).getFirstName().equals(medicalrecords.getFirstName()) &amp;&amp;
-						   dataSource.getMedicalrecords().get(i).getLastName().equals(medicalrecords.getLastName())) {
-					if(dataSource.getMedicalrecords().remove(medicalrecords)) {
-						logger.info(&quot;Delete MedicalRecord : &quot; + medicalrecords.getFirstName() + &quot; &quot; + medicalrecords.getLastName());
-						return medicalrecords;
-					}
-					else {
-						logger.info(&quot;Error delete MedicalRecord : &quot; + medicalrecords.getFirstName() + &quot; &quot; + medicalrecords.getLastName());
-						return null;
-					}
-				}
-			}
-			logger.info(&quot;Error delete MedicalRecord (MedicalRecord not exist : &quot; + medicalrecords.getFirstName() + &quot; &quot; + medicalrecords.getLastName());
-			return null;
-		}*/
-		
-		/*@Override
-	    public List&lt;String&gt; getMedicationFromPerson(Person person) {
-			for(int i = 0; i &lt; dataSource.getMedicalrecords().size(); i++) {
-				if(dataSource.getMedicalrecords().get(i).getFirstName().equals(person.getFirstName())  &amp;&amp;
-				   dataSource.getMedicalrecords().get(i).getLastName().equals(person.getLastName()))
-					return dataSource.getMedicalrecords().get(i).getMedications();
-			}
-			return null;
-	    }*/
-		
-		/*@Override
-	    public List&lt;String&gt; getAllergieFromPerson(Person person) {
-			for(int i = 0; i &lt; dataSource.getMedicalrecords().size(); i++) {
-				if(dataSource.getMedicalrecords().get(i).getFirstName().equals(person.getFirstName())  &amp;&amp;
-				   dataSource.getMedicalrecords().get(i).getLastName().equals(person.getLastName()))
-					return dataSource.getMedicalrecords().get(i).getAllergies();
-			}
-			return null;
-	    }*/
-		
-		
 }
 
 

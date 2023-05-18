@@ -45,31 +45,25 @@ import org.springframework.stereotype.Component;
 	public void setMedications(List&lt;String&gt; medications) {
 <span class="fc" id="L46">		this.medications = medications;</span>
 <span class="fc" id="L47">	}</span>
-	/*public void addMedications(List&lt;String&gt; medications) {
-		if(medications != null) {
-			this.medications = new ArrayList&lt;&gt;();
-			this.setMedications(medications);
-		}
-	}*/
 	
 	public List&lt;String&gt; getAllergies() {
-<span class="fc" id="L56">		return allergies;</span>
+<span class="fc" id="L50">		return allergies;</span>
 	}
 	public void setAllergies(List&lt;String&gt; allergies) {
-<span class="fc" id="L59">		this.allergies = allergies;</span>
-<span class="fc" id="L60">	}</span>
+<span class="fc" id="L53">		this.allergies = allergies;</span>
+<span class="fc" id="L54">	}</span>
 	
 	@Override
     public boolean equals(Object o) {
-<span class="pc bpc" id="L64" title="1 of 2 branches missed.">        if (this == o) return true;</span>
-<span class="pc bpc" id="L65" title="2 of 4 branches missed.">        if (o == null || getClass() != o.getClass()) return false;</span>
-<span class="fc" id="L66">        PersonInfo personInfo = (PersonInfo) o;</span>
-<span class="pc bpc" id="L67" title="1 of 2 branches missed.">        return  Objects.equals(lastName, personInfo.lastName) &amp;&amp;</span>
-<span class="fc bfc" id="L68" title="All 2 branches covered.">                Objects.equals(address, personInfo.address) &amp;&amp;</span>
-<span class="pc bpc" id="L69" title="1 of 2 branches missed.">                Objects.equals(age, personInfo.age) &amp;&amp;</span>
-<span class="pc bpc" id="L70" title="1 of 2 branches missed.">                Objects.equals(email, personInfo.email) &amp;&amp;</span>
-<span class="pc bpc" id="L71" title="1 of 2 branches missed.">                Objects.equals(medications, personInfo.medications) &amp;&amp;</span>
-<span class="pc bpc" id="L72" title="1 of 2 branches missed.">                Objects.equals(allergies, personInfo.allergies);</span>
+<span class="pc bpc" id="L58" title="1 of 2 branches missed.">        if (this == o) return true;</span>
+<span class="pc bpc" id="L59" title="2 of 4 branches missed.">        if (o == null || getClass() != o.getClass()) return false;</span>
+<span class="fc" id="L60">        PersonInfo personInfo = (PersonInfo) o;</span>
+<span class="pc bpc" id="L61" title="1 of 2 branches missed.">        return  Objects.equals(lastName, personInfo.lastName) &amp;&amp;</span>
+<span class="fc bfc" id="L62" title="All 2 branches covered.">                Objects.equals(address, personInfo.address) &amp;&amp;</span>
+<span class="pc bpc" id="L63" title="1 of 2 branches missed.">                Objects.equals(age, personInfo.age) &amp;&amp;</span>
+<span class="pc bpc" id="L64" title="1 of 2 branches missed.">                Objects.equals(email, personInfo.email) &amp;&amp;</span>
+<span class="pc bpc" id="L65" title="1 of 2 branches missed.">                Objects.equals(medications, personInfo.medications) &amp;&amp;</span>
+<span class="pc bpc" id="L66" title="1 of 2 branches missed.">                Objects.equals(allergies, personInfo.allergies);</span>
     }
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.8.202204050719</span></div></body></html>
