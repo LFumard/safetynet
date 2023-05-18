@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="fr"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>PersonRepository.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">safetynet</a> &gt; <a href="index.source.html" class="el_package">com.openclassrooms.safetynet.repository</a> &gt; <span class="el_source">PersonRepository.java</span></div><h1>PersonRepository.java</h1><pre class="source lang-java linenums">package com.openclassrooms.safetynet.repository;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import org.springframework.stereotype.Component;
+import com.openclassrooms.safetynet.model.DataSource;
+import com.openclassrooms.safetynet.model.Person;
+
+@Component
+public class PersonRepository {
+	private final DataSource dataSource;
+
+	public PersonRepository(DataSource dataSource) {
+<span class="fc" id="L15">		super();</span>
+<span class="fc" id="L16">		this.dataSource = dataSource;</span>
+<span class="fc" id="L17">	}</span>
+
+	public List&lt;Person&gt; getPersonByAddress(List&lt;String&gt; lstAddressFromStation) {
+<span class="fc" id="L20">		List&lt;Person&gt; lstPersonFromAddress = new ArrayList&lt;&gt;();</span>
+<span class="fc bfc" id="L21" title="All 2 branches covered.">		for(int iAddress = 0; iAddress &lt; lstAddressFromStation.size(); iAddress++) {</span>
+<span class="fc bfc" id="L22" title="All 2 branches covered.">			for(int iPeople = 0; iPeople &lt; dataSource.people.size(); iPeople++) {</span>
+<span class="fc bfc" id="L23" title="All 2 branches covered.">				if(dataSource.people.get(iPeople).getAddress().equals(lstAddressFromStation.get(iAddress))) {</span>
+<span class="fc" id="L24">					lstPersonFromAddress.add(dataSource.getPersons().get(iPeople));</span>
+				}
+			}
+		}
+<span class="fc bfc" id="L28" title="All 2 branches covered.">		if(lstPersonFromAddress.size() &lt; 1)</span>
+<span class="fc" id="L29">			return null;</span>
+<span class="fc" id="L30">		else return lstPersonFromAddress;</span>
+	}
+
+	public List&lt;Person&gt; getPersonByLstName(String lstName) {
+<span class="fc" id="L34">		List&lt;Person&gt; lstPersonSameLstName = new ArrayList&lt;&gt;();</span>
+<span class="fc bfc" id="L35" title="All 2 branches covered.">		for(int iPerson = 0; iPerson &lt; dataSource.people.size(); iPerson++) {</span>
+<span class="fc bfc" id="L36" title="All 2 branches covered.">			if(dataSource.people.get(iPerson).getLastName().equals(lstName)) {</span>
+<span class="fc" id="L37">				lstPersonSameLstName.add(dataSource.people.get(iPerson));</span>
+			}
+		}
+<span class="fc bfc" id="L40" title="All 2 branches covered.">		if(lstPersonSameLstName.size() &gt; 0)</span>
+<span class="fc" id="L41">			return lstPersonSameLstName;</span>
+<span class="fc" id="L42">		else return null;</span>
+	}
+	
+	public Person getPersonByFstNameLstName(String fstName, String lstName) {
+<span class="fc" id="L46">		Person PersonSameFstNameLstName = new Person();</span>
+<span class="fc bfc" id="L47" title="All 2 branches covered.">		for(int iPerson = 0; iPerson &lt; dataSource.people.size(); iPerson++) {</span>
+<span class="fc bfc" id="L48" title="All 2 branches covered.">			if(dataSource.people.get(iPerson).getLastName().equals(lstName) &amp;&amp;</span>
+<span class="pc bpc" id="L49" title="1 of 2 branches missed.">			   dataSource.people.get(iPerson).getFirstName().equals(fstName)) {</span>
+<span class="fc" id="L50">				PersonSameFstNameLstName.setFirstName(fstName);</span>
+<span class="fc" id="L51">				PersonSameFstNameLstName.setLastName(lstName);</span>
+<span class="fc" id="L52">				PersonSameFstNameLstName.setAddress(dataSource.people.get(iPerson).getAddress());</span>
+<span class="fc" id="L53">				PersonSameFstNameLstName.setCity(dataSource.people.get(iPerson).getCity());</span>
+<span class="fc" id="L54">				PersonSameFstNameLstName.setEmail(dataSource.people.get(iPerson).getEmail());</span>
+<span class="fc" id="L55">				PersonSameFstNameLstName.setPhone(dataSource.people.get(iPerson).getPhone());</span>
+<span class="fc" id="L56">				PersonSameFstNameLstName.setZip(dataSource.people.get(iPerson).getZip());</span>
+<span class="fc" id="L57">				return PersonSameFstNameLstName;</span>
+			}
+		}
+<span class="fc" id="L60">		return null;</span>
+	}
+
+
+	public boolean updatePerson(Person person) {
+<span class="fc bfc" id="L65" title="All 2 branches covered.">		for(int iPerson = 0; iPerson &lt; dataSource.people.size(); iPerson++) {</span>
+<span class="fc bfc" id="L66" title="All 2 branches covered.">			if(dataSource.people.get(iPerson).getLastName().equals(person.getLastName()) &amp;&amp;</span>
+<span class="pc bpc" id="L67" title="1 of 2 branches missed.">			   dataSource.people.get(iPerson).getFirstName().equals(person.getFirstName())) {</span>
+<span class="fc" id="L68">				dataSource.people.get(iPerson).setAddress(person.getAddress());</span>
+<span class="fc" id="L69">				dataSource.people.get(iPerson).setCity(person.getCity());</span>
+<span class="fc" id="L70">				dataSource.people.get(iPerson).setEmail(person.getEmail());</span>
+<span class="fc" id="L71">				dataSource.people.get(iPerson).setPhone(person.getPhone());</span>
+<span class="fc" id="L72">				dataSource.people.get(iPerson).setZip(person.getZip());</span>
+<span class="fc" id="L73">				return true;</span>
+			}
+		}
+<span class="fc" id="L76">		return false;</span>
+	}
+
+	public boolean deletePerson(Person personToDelete) {
+		boolean retour;
+<span class="fc" id="L81">		List&lt;Person&gt; lstpersonToDelete = new ArrayList&lt;&gt;();</span>
+<span class="fc" id="L82">		lstpersonToDelete.add(personToDelete);</span>
+<span class="fc" id="L83">		retour = dataSource.people.remove(personToDelete);</span>
+<span class="fc" id="L84">		return retour;</span>
+	}
+
+	public List&lt;String&gt; getDistinctEmailByCityFromPerson(String city) {
+<span class="fc" id="L88">		List&lt;String&gt; lstCommunityEmail = new ArrayList&lt;String&gt;();</span>
+<span class="fc bfc" id="L89" title="All 2 branches covered.">		for(int iPerson = 0; iPerson &lt; dataSource.people.size(); iPerson++) {</span>
+<span class="fc bfc" id="L90" title="All 2 branches covered.">			if(dataSource.people.get(iPerson).getCity().equals(city))</span>
+<span class="fc bfc" id="L91" title="All 2 branches covered.">				if(!lstCommunityEmail.contains(dataSource.people.get(iPerson).getEmail()))</span>
+<span class="fc" id="L92">					lstCommunityEmail.add(dataSource.people.get(iPerson).getEmail());</span>
+		}
+<span class="fc bfc" id="L94" title="All 2 branches covered.">		if(lstCommunityEmail.size() &gt; 0)</span>
+<span class="fc" id="L95">		 return lstCommunityEmail;</span>
+<span class="fc" id="L96">		else return null;</span>
+	}
+
+	public boolean addPerson(Person person) {
+<span class="fc" id="L100">		return dataSource.people.add(person);</span>
+	}
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.8.202204050719</span></div></body></html>

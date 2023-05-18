@@ -1,0 +1,914 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2023-05-17T18:59:23.344477100Z</date>
+  <millis>1684349963344</millis>
+  <nanos>477100</nanos>
+  <sequence>4</sequence>
+  <logger>com.openclassrooms.safetynet.controller.FirestationsController</logger>
+  <level>INFO</level>
+  <class>com.openclassrooms.safetynet.controller.FirestationsController</class>
+  <method>getPhonePersonFromStation</method>
+  <thread>31</thread>
+  <message>Request - getPhonePersonFromStation for station : [3]</message>
+</record>
+<record>
+  <date>2023-05-17T18:59:23.355475600Z</date>
+  <millis>1684349963355</millis>
+  <nanos>475600</nanos>
+  <sequence>5</sequence>
+  <logger>com.openclassrooms.safetynet.controller.FirestationsController</logger>
+  <level>INFO</level>
+  <class>com.openclassrooms.safetynet.controller.FirestationsController</class>
+  <method>getPhonePersonFromStation</method>
+  <thread>31</thread>
+  <message>Response - getPhonePersonFromStation for station : [3] = [841-874-6512, 841-874-6513, 841-874-6544, 841-874-6741, 841-874-6874, 841-874-8888, 841-874-9888]</message>
+</record>
+<record>
+  <date>2023-05-17T19:00:00.689544300Z</date>
+  <millis>1684350000689</millis>
+  <nanos>544300</nanos>
+  <sequence>6</sequence>
+  <logger>com.openclassrooms.safetynet.controller.FirestationsController</logger>
+  <level>INFO</level>
+  <class>com.openclassrooms.safetynet.controller.FirestationsController</class>
+  <method>getPersonFromAddress</method>
+  <thread>32</thread>
+  <message>Request - getPersonFromAddress for address station : [112 Steppes Pl]</message>
+</record>
+<record>
+  <date>2023-05-17T19:00:00.694652300Z</date>
+  <millis>1684350000694</millis>
+  <nanos>652300</nanos>
+  <sequence>7</sequence>
+  <logger>com.openclassrooms.safetynet.controller.FirestationsController</logger>
+  <level>INFO</level>
+  <class>com.openclassrooms.safetynet.controller.FirestationsController</class>
+  <method>getPersonFromAddress</method>
+  <thread>32</thread>
+  <message>Response - getPersonFromAddress for address station : [112 Steppes Pl] = [com.openclassrooms.safetynet.model.PersonFireAddress@76f660ad]</message>
+</record>
+<record>
+  <date>2023-05-17T19:00:26.904158200Z</date>
+  <millis>1684350026904</millis>
+  <nanos>158200</nanos>
+  <sequence>8</sequence>
+  <logger>com.openclassrooms.safetynet.controller.FirestationsController</logger>
+  <level>INFO</level>
+  <class>com.openclassrooms.safetynet.controller.FirestationsController</class>
+  <method>getPhonePersonFromStation</method>
+  <thread>33</thread>
+  <message>Request - getPhonePersonFromStation for station : []</message>
+</record>
+<record>
+  <date>2023-05-17T19:00:26.905158700Z</date>
+  <millis>1684350026905</millis>
+  <nanos>158700</nanos>
+  <sequence>9</sequence>
+  <logger>com.openclassrooms.safetynet.controller.FirestationsController</logger>
+  <level>WARNING</level>
+  <class>com.openclassrooms.safetynet.controller.FirestationsController</class>
+  <method>getPhonePersonFromStation</method>
+  <thread>33</thread>
+  <message>Response - getPhonePersonFromStation KO for station : []</message>
+</record>
+<record>
+  <date>2023-05-17T19:00:40.916679200Z</date>
+  <millis>1684350040916</millis>
+  <nanos>679200</nanos>
+  <sequence>10</sequence>
+  <logger>com.openclassrooms.safetynet.controller.FirestationsController</logger>
+  <level>INFO</level>
+  <class>com.openclassrooms.safetynet.controller.FirestationsController</class>
+  <method>getPhonePersonFromStation</method>
+  <thread>34</thread>
+  <message>Request - getPhonePersonFromStation for station : [3]</message>
+</record>
+<record>
+  <date>2023-05-17T19:00:40.916679200Z</date>
+  <millis>1684350040916</millis>
+  <nanos>679200</nanos>
+  <sequence>11</sequence>
+  <logger>com.openclassrooms.safetynet.controller.FirestationsController</logger>
+  <level>INFO</level>
+  <class>com.openclassrooms.safetynet.controller.FirestationsController</class>
+  <method>getPhonePersonFromStation</method>
+  <thread>34</thread>
+  <message>Response - getPhonePersonFromStation for station : [3] = [841-874-6512, 841-874-6513, 841-874-6544, 841-874-6741, 841-874-6874, 841-874-8888, 841-874-9888]</message>
+</record>
+<record>
+  <date>2023-05-17T19:01:23.033534100Z</date>
+  <millis>1684350083033</millis>
+  <nanos>534100</nanos>
+  <sequence>12</sequence>
+  <logger>com.openclassrooms.safetynet.controller.PersonController</logger>
+  <level>INFO</level>
+  <class>com.openclassrooms.safetynet.controller.PersonController</class>
+  <method>getPersonInfo</method>
+  <thread>35</thread>
+  <message>Request - Person info with firstname = John, lastname=Boyd</message>
+</record>
+<record>
+  <date>2023-05-17T19:01:23.034531300Z</date>
+  <millis>1684350083034</millis>
+  <nanos>531300</nanos>
+  <sequence>13</sequence>
+  <logger>com.openclassrooms.safetynet.controller.PersonController</logger>
+  <level>INFO</level>
+  <class>com.openclassrooms.safetynet.controller.PersonController</class>
+  <method>getPersonInfo</method>
+  <thread>35</thread>
+  <message>Response - personInfo for John Boyd=[com.openclassrooms.safetynet.model.PersonInfo@5405bc06, com.openclassrooms.safetynet.model.PersonInfo@503a225e, com.openclassrooms.safetynet.model.PersonInfo@1538b63d, com.openclassrooms.safetynet.model.PersonInfo@5dfb168d, com.openclassrooms.safetynet.model.PersonInfo@24e764b8, com.openclassrooms.safetynet.model.PersonInfo@25ce9aa8]</message>
+</record>
+<record>
+  <date>2023-05-17T19:01:54.399166500Z</date>
+  <millis>1684350114399</millis>
+  <nanos>166500</nanos>
+  <sequence>14</sequence>
+  <logger>com.openclassrooms.safetynet.controller.PersonController</logger>
+  <level>INFO</level>
+  <class>com.openclassrooms.safetynet.controller.PersonController</class>
+  <method>getPersonInfo</method>
+  <thread>36</thread>
+  <message>Request - Person info with firstname = John, lastname=Boydi</message>
+</record>
+<record>
+  <date>2023-05-17T19:01:54.400173500Z</date>
+  <millis>1684350114400</millis>
+  <nanos>173500</nanos>
+  <sequence>15</sequence>
+  <logger>com.openclassrooms.safetynet.controller.PersonController</logger>
+  <level>WARNING</level>
+  <class>com.openclassrooms.safetynet.controller.PersonController</class>
+  <method>getPersonInfo</method>
+  <thread>36</thread>
+  <message>Response - Wrong entry - personInfo : John Boydi</message>
+</record>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2023-05-18T12:19:08.886834200Z</date>
+  <millis>1684412348886</millis>
+  <nanos>834200</nanos>
+  <sequence>4</sequence>
+  <logger>com.openclassrooms.safetynet.controller.PersonController</logger>
+  <level>INFO</level>
+  <class>com.openclassrooms.safetynet.controller.PersonController</class>
+  <method>getPersonInfo</method>
+  <thread>31</thread>
+  <message>Request - Person info with firstname = John, lastname=Boydi</message>
+</record>
+<?xml version="1.0" encoding="windows-1252" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2023-05-18T12:21:08.957576700Z</date>
+  <millis>1684412468957</millis>
+  <nanos>576700</nanos>
+  <sequence>0</sequence>
+  <logger>com.openclassrooms.safetynet.controller.FirestationsController</logger>
+  <level>INFO</level>
+  <class>com.openclassrooms.safetynet.controller.FirestationsController</class>
+  <method>getPersonFromStation</method>
+  <thread>1</thread>
+  <message>Request - getPersonFromStation for station : [Station Number NOT IN DATA]</message>
+</record>
+<record>
+  <date>2023-05-18T12:21:08.959122400Z</date>
+  <millis>1684412468959</millis>
+  <nanos>122400</nanos>
+  <sequence>1</sequence>
+  <logger>com.openclassrooms.safetynet.controller.FirestationsController</logger>
+  <level>WARNING</level>
+  <class>com.openclassrooms.safetynet.controller.FirestationsController</class>
+  <method>getPersonFromStation</method>
+  <thread>1</thread>
+  <message>Response - getPersonFromStation KO for : [Station Number NOT IN DATA]</message>
+</record>
+<record>
+  <date>2023-05-18T12:21:09.015598Z</date>
+  <millis>1684412469015</millis>
+  <nanos>598000</nanos>
+  <sequence>2</sequence>
+  <logger>com.openclassrooms.safetynet.controller.FirestationsController</logger>
+  <level>INFO</level>
+  <class>com.openclassrooms.safetynet.controller.FirestationsController</class>
+  <method>getPhonePersonFromStation</method>
+  <thread>1</thread>
+  <message>Request - getPhonePersonFromStation for station : [3]</message>
+</record>
+<record>
+  <date>2023-05-18T12:21:09.016771Z</date>
+  <millis>1684412469016</millis>
+  <nanos>771000</nanos>
+  <sequence>3</sequence>
+  <logger>com.openclassrooms.safetynet.controller.FirestationsController</logger>
+  <level>INFO</level>
+  <class>com.openclassrooms.safetynet.controller.FirestationsController</class>
+  <method>getPhonePersonFromStation</method>
+  <thread>1</thread>
+  <message>Response - getPhonePersonFromStation for station : [3] = [841-874-6512, 841-874-6513, 841-874-6544, 841-874-6741, 841-874-6874, 841-874-8888, 841-874-9888]</message>
+</record>
+<record>
+  <date>2023-05-18T12:21:09.059088300Z</date>
+  <millis>1684412469059</millis>
+  <nanos>88300</nanos>
+  <sequence>4</sequence>
+  <logger>com.openclassrooms.safetynet.controller.FirestationsController</logger>
+  <level>INFO</level>
+  <class>com.openclassrooms.safetynet.controller.FirestationsController</class>
+  <method>addFireStation</method>
+  <thread>1</thread>
+  <message>Request - post fireStation for : { address='NEW address', station='NEW station'}</message>
+</record>
+<record>
+  <date>2023-05-18T12:21:09.059857700Z</date>
+  <millis>1684412469059</millis>
+  <nanos>857700</nanos>
+  <sequence>5</sequence>
+  <logger>com.openclassrooms.safetynet.controller.FirestationsController</logger>
+  <level>INFO</level>
+  <class>com.openclassrooms.safetynet.controller.FirestationsController</class>
+  <method>addFireStation</method>
+  <thread>1</thread>
+  <message>Response - post fireStation OK for : { address='NEW address', station='NEW station'}</message>
+</record>
+<record>
+  <date>2023-05-18T12:21:09.080476500Z</date>
+  <millis>1684412469080</millis>
+  <nanos>476500</nanos>
+  <sequence>6</sequence>
+  <logger>com.openclassrooms.safetynet.controller.FirestationsController</logger>
+  <level>INFO</level>
+  <class>com.openclassrooms.safetynet.controller.FirestationsController</class>
+  <method>deleteFireStation</method>
+  <thread>1</thread>
+  <message>Request - delete fireStation for : { address='address NOT IN DATA', station='station NOT IN DATA'}</message>
+</record>
+<record>
+  <date>2023-05-18T12:21:09.080517Z</date>
+  <millis>1684412469080</millis>
+  <nanos>517000</nanos>
+  <sequence>7</sequence>
+  <logger>com.openclassrooms.safetynet.controller.FirestationsController</logger>
+  <level>WARNING</level>
+  <class>com.openclassrooms.safetynet.controller.FirestationsController</class>
+  <method>deleteFireStation</method>
+  <thread>1</thread>
+  <message>Response - delete fireStation KO for : { address='address NOT IN DATA', station='station NOT IN DATA'}</message>
+</record>
+<record>
+  <date>2023-05-18T12:21:09.090366300Z</date>
+  <millis>1684412469090</millis>
+  <nanos>366300</nanos>
+  <sequence>8</sequence>
+  <logger>com.openclassrooms.safetynet.controller.FirestationsController</logger>
+  <level>INFO</level>
+  <class>com.openclassrooms.safetynet.controller.FirestationsController</class>
+  <method>getPersonFromAddress</method>
+  <thread>1</thread>
+  <message>Request - getPersonFromAddress for address station : [112 Steppes Pl]</message>
+</record>
+<record>
+  <date>2023-05-18T12:21:09.094378Z</date>
+  <millis>1684412469094</millis>
+  <nanos>378000</nanos>
+  <sequence>9</sequence>
+  <logger>com.openclassrooms.safetynet.controller.FirestationsController</logger>
+  <level>INFO</level>
+  <class>com.openclassrooms.safetynet.controller.FirestationsController</class>
+  <method>getPersonFromAddress</method>
+  <thread>1</thread>
+  <message>Response - getPersonFromAddress for address station : [112 Steppes Pl] = [com.openclassrooms.safetynet.model.PersonFireAddress@797bbeae]</message>
+</record>
+<record>
+  <date>2023-05-18T12:21:09.110324300Z</date>
+  <millis>1684412469110</millis>
+  <nanos>324300</nanos>
+  <sequence>10</sequence>
+  <logger>com.openclassrooms.safetynet.controller.FirestationsController</logger>
+  <level>INFO</level>
+  <class>com.openclassrooms.safetynet.controller.FirestationsController</class>
+  <method>updateFireStation</method>
+  <thread>1</thread>
+  <message>Request - put fireStation for : { address='address NOT IN DATA', station='station NOT IN DATA'}</message>
+</record>
+<record>
+  <date>2023-05-18T12:21:09.111320400Z</date>
+  <millis>1684412469111</millis>
+  <nanos>320400</nanos>
+  <sequence>11</sequence>
+  <logger>com.openclassrooms.safetynet.controller.FirestationsController</logger>
+  <level>WARNING</level>
+  <class>com.openclassrooms.safetynet.controller.FirestationsController</class>
+  <method>updateFireStation</method>
+  <thread>1</thread>
+  <message>Response - put fireStation KO for : { address='address NOT IN DATA', station='station NOT IN DATA'}</message>
+</record>
+<record>
+  <date>2023-05-18T12:21:09.119588400Z</date>
+  <millis>1684412469119</millis>
+  <nanos>588400</nanos>
+  <sequence>12</sequence>
+  <logger>com.openclassrooms.safetynet.controller.FirestationsController</logger>
+  <level>INFO</level>
+  <class>com.openclassrooms.safetynet.controller.FirestationsController</class>
+  <method>getPhonePersonFromStation</method>
+  <thread>1</thread>
+  <message>Request - getPhonePersonFromStation for station : [Station Number NOT IN DATA]</message>
+</record>
+<record>
+  <date>2023-05-18T12:21:09.119588400Z</date>
+  <millis>1684412469119</millis>
+  <nanos>588400</nanos>
+  <sequence>13</sequence>
+  <logger>com.openclassrooms.safetynet.controller.FirestationsController</logger>
+  <level>WARNING</level>
+  <class>com.openclassrooms.safetynet.controller.FirestationsController</class>
+  <method>getPhonePersonFromStation</method>
+  <thread>1</thread>
+  <message>Response - getPhonePersonFromStation KO for station : [Station Number NOT IN DATA]</message>
+</record>
+<record>
+  <date>2023-05-18T12:21:09.126589Z</date>
+  <millis>1684412469126</millis>
+  <nanos>589000</nanos>
+  <sequence>14</sequence>
+  <logger>com.openclassrooms.safetynet.controller.FirestationsController</logger>
+  <level>INFO</level>
+  <class>com.openclassrooms.safetynet.controller.FirestationsController</class>
+  <method>getPersonFromAddress</method>
+  <thread>1</thread>
+  <message>Request - getPersonFromAddress for address station : [address NOT IN DATA]</message>
+</record>
+<record>
+  <date>2023-05-18T12:21:09.126589Z</date>
+  <millis>1684412469126</millis>
+  <nanos>589000</nanos>
+  <sequence>15</sequence>
+  <logger>com.openclassrooms.safetynet.controller.FirestationsController</logger>
+  <level>WARNING</level>
+  <class>com.openclassrooms.safetynet.controller.FirestationsController</class>
+  <method>getPersonFromAddress</method>
+  <thread>1</thread>
+  <message>Response - getPersonFromAddress KO for address station : [address NOT IN DATA]</message>
+</record>
+<record>
+  <date>2023-05-18T12:21:09.134710500Z</date>
+  <millis>1684412469134</millis>
+  <nanos>710500</nanos>
+  <sequence>16</sequence>
+  <logger>com.openclassrooms.safetynet.controller.FirestationsController</logger>
+  <level>INFO</level>
+  <class>com.openclassrooms.safetynet.controller.FirestationsController</class>
+  <method>updateFireStation</method>
+  <thread>1</thread>
+  <message>Request - put fireStation for : { address='1509 Culver St', station='NEW station'}</message>
+</record>
+<record>
+  <date>2023-05-18T12:21:09.134710500Z</date>
+  <millis>1684412469134</millis>
+  <nanos>710500</nanos>
+  <sequence>17</sequence>
+  <logger>com.openclassrooms.safetynet.controller.FirestationsController</logger>
+  <level>INFO</level>
+  <class>com.openclassrooms.safetynet.controller.FirestationsController</class>
+  <method>updateFireStation</method>
+  <thread>1</thread>
+  <message>Response - put fireStation OK for : { address='1509 Culver St', station='NEW station'}</message>
+</record>
+<record>
+  <date>2023-05-18T12:21:09.141706900Z</date>
+  <millis>1684412469141</millis>
+  <nanos>706900</nanos>
+  <sequence>18</sequence>
+  <logger>com.openclassrooms.safetynet.controller.FirestationsController</logger>
+  <level>INFO</level>
+  <class>com.openclassrooms.safetynet.controller.FirestationsController</class>
+  <method>addFireStation</method>
+  <thread>1</thread>
+  <message>Request - post fireStation for : { address='1509 Culver St', station='3'}</message>
+</record>
+<record>
+  <date>2023-05-18T12:21:09.142707700Z</date>
+  <millis>1684412469142</millis>
+  <nanos>707700</nanos>
+  <sequence>19</sequence>
+  <logger>com.openclassrooms.safetynet.controller.FirestationsController</logger>
+  <level>WARNING</level>
+  <class>com.openclassrooms.safetynet.controller.FirestationsController</class>
+  <method>addFireStation</method>
+  <thread>1</thread>
+  <message>Response - post fireStation OK for : { address='1509 Culver St', station='3'}</message>
+</record>
+<record>
+  <date>2023-05-18T12:21:09.149298300Z</date>
+  <millis>1684412469149</millis>
+  <nanos>298300</nanos>
+  <sequence>20</sequence>
+  <logger>com.openclassrooms.safetynet.controller.FirestationsController</logger>
+  <level>INFO</level>
+  <class>com.openclassrooms.safetynet.controller.FirestationsController</class>
+  <method>deleteFireStation</method>
+  <thread>1</thread>
+  <message>Request - delete fireStation for : { address='1509 Culver St', station='3'}</message>
+</record>
+<record>
+  <date>2023-05-18T12:21:09.150096900Z</date>
+  <millis>1684412469150</millis>
+  <nanos>96900</nanos>
+  <sequence>21</sequence>
+  <logger>com.openclassrooms.safetynet.controller.FirestationsController</logger>
+  <level>INFO</level>
+  <class>com.openclassrooms.safetynet.controller.FirestationsController</class>
+  <method>deleteFireStation</method>
+  <thread>1</thread>
+  <message>Response - delete fireStation OK for : { address='1509 Culver St', station='3'}</message>
+</record>
+<record>
+  <date>2023-05-18T12:21:09.156530900Z</date>
+  <millis>1684412469156</millis>
+  <nanos>530900</nanos>
+  <sequence>22</sequence>
+  <logger>com.openclassrooms.safetynet.controller.FirestationsController</logger>
+  <level>INFO</level>
+  <class>com.openclassrooms.safetynet.controller.FirestationsController</class>
+  <method>getPersonFromStation</method>
+  <thread>1</thread>
+  <message>Request - getPersonFromStation for station : [4]</message>
+</record>
+<record>
+  <date>2023-05-18T12:21:09.159530800Z</date>
+  <millis>1684412469159</millis>
+  <nanos>530800</nanos>
+  <sequence>23</sequence>
+  <logger>com.openclassrooms.safetynet.controller.FirestationsController</logger>
+  <level>INFO</level>
+  <class>com.openclassrooms.safetynet.controller.FirestationsController</class>
+  <method>getPersonFromStation</method>
+  <thread>1</thread>
+  <message>Response - getPersonFromStation for station : [4] = [com.openclassrooms.safetynet.model.PersonStationNumber@2523730b]</message>
+</record>
+<record>
+  <date>2023-05-18T12:21:09.188748800Z</date>
+  <millis>1684412469188</millis>
+  <nanos>748800</nanos>
+  <sequence>24</sequence>
+  <logger>com.openclassrooms.safetynet.controller.MedicalrecordsController</logger>
+  <level>INFO</level>
+  <class>com.openclassrooms.safetynet.controller.MedicalrecordsController</class>
+  <method>addMedicalrecords</method>
+  <thread>1</thread>
+  <message>Request - post medicalrecords for : { lastName='NEW LastName', firstName='NEW FirstName', birthdate='01/01/2000', allergies='[NEW ALLERGY:Allergie1]', medications='[NEW MEDICATION:Medication1]'}</message>
+</record>
+<record>
+  <date>2023-05-18T12:21:09.188748800Z</date>
+  <millis>1684412469188</millis>
+  <nanos>748800</nanos>
+  <sequence>25</sequence>
+  <logger>com.openclassrooms.safetynet.controller.MedicalrecordsController</logger>
+  <level>INFO</level>
+  <class>com.openclassrooms.safetynet.controller.MedicalrecordsController</class>
+  <method>addMedicalrecords</method>
+  <thread>1</thread>
+  <message>Response - post medicalrecords OK for : { lastName='NEW LastName', firstName='NEW FirstName', birthdate='01/01/2000', allergies='[NEW ALLERGY:Allergie1]', medications='[NEW MEDICATION:Medication1]'}</message>
+</record>
+<record>
+  <date>2023-05-18T12:21:09.199935400Z</date>
+  <millis>1684412469199</millis>
+  <nanos>935400</nanos>
+  <sequence>26</sequence>
+  <logger>com.openclassrooms.safetynet.controller.MedicalrecordsController</logger>
+  <level>INFO</level>
+  <class>com.openclassrooms.safetynet.controller.MedicalrecordsController</class>
+  <method>deleteMedicalrecord</method>
+  <thread>1</thread>
+  <message>Request - delete medicalrecords for : { lastName='lastName NOT IN DATA', firstName='firstName NOT IN DATA', birthdate='01/01/2000', allergies='[]', medications='[]'}</message>
+</record>
+<record>
+  <date>2023-05-18T12:21:09.200935Z</date>
+  <millis>1684412469200</millis>
+  <nanos>935000</nanos>
+  <sequence>27</sequence>
+  <logger>com.openclassrooms.safetynet.controller.MedicalrecordsController</logger>
+  <level>WARNING</level>
+  <class>com.openclassrooms.safetynet.controller.MedicalrecordsController</class>
+  <method>deleteMedicalrecord</method>
+  <thread>1</thread>
+  <message>Request - delete medicalrecords KO for : { lastName='lastName NOT IN DATA', firstName='firstName NOT IN DATA', birthdate='01/01/2000', allergies='[]', medications='[]'}</message>
+</record>
+<record>
+  <date>2023-05-18T12:21:09.207576800Z</date>
+  <millis>1684412469207</millis>
+  <nanos>576800</nanos>
+  <sequence>28</sequence>
+  <logger>com.openclassrooms.safetynet.controller.MedicalrecordsController</logger>
+  <level>INFO</level>
+  <class>com.openclassrooms.safetynet.controller.MedicalrecordsController</class>
+  <method>getMedicalrecords</method>
+  <thread>1</thread>
+  <message>Request - all medicalrecords</message>
+</record>
+<record>
+  <date>2023-05-18T12:21:09.208590400Z</date>
+  <millis>1684412469208</millis>
+  <nanos>590400</nanos>
+  <sequence>29</sequence>
+  <logger>com.openclassrooms.safetynet.controller.MedicalrecordsController</logger>
+  <level>INFO</level>
+  <class>com.openclassrooms.safetynet.controller.MedicalrecordsController</class>
+  <method>getMedicalrecords</method>
+  <thread>1</thread>
+  <message>Response - all medicalrecords = [{ lastName='Boyd', firstName='John', birthdate='03/06/1984', allergies='[nillacilan]', medications='[aznol:350mg, hydrapermazol:100mg]'}, { lastName='Boyd', firstName='Jacob', birthdate='03/06/1989', allergies='[]', medications='[pharmacol:5000mg, terazine:10mg, noznazol:250mg]'}, { lastName='Boyd', firstName='Tenley', birthdate='02/18/2012', allergies='[peanut]', medications='[]'}, { lastName='Boyd', firstName='Roger', birthdate='09/06/2017', allergies='[]', medications='[]'}, { lastName='Boyd', firstName='Felicia', birthdate='01/08/1986', allergies='[xilliathal]', medications='[tetracyclaz:650mg]'}, { lastName='Marrack', firstName='Jonanathan', birthdate='01/03/1989', allergies='[]', medications='[]'}, { lastName='Carman', firstName='Tessa', birthdate='02/18/2012', allergies='[]', medications='[]'}, { lastName='Duncan', firstName='Peter', birthdate='09/06/2000', allergies='[shellfish]', medications='[]'}, { lastName='Shepard', firstName='Foster', birthdate='01/08/1980', allergies='[]', medications='[]'}, { lastName='Cooper', firstName='Tony', birthdate='03/06/1994', allergies='[shellfish]', medications='[hydrapermazol:300mg, dodoxadin:30mg]'}, { lastName='Cooper', firstName='Lily', birthdate='03/06/1994', allergies='[]', medications='[]'}, { lastName='Zemicks', firstName='Sophia', birthdate='03/06/1988', allergies='[peanut, shellfish, aznol]', medications='[aznol:60mg, hydrapermazol:900mg, pharmacol:5000mg, terazine:500mg]'}, { lastName='Zemicks', firstName='Warren', birthdate='03/06/1985', allergies='[]', medications='[]'}, { lastName='Zemicks', firstName='Zach', birthdate='03/06/2017', allergies='[]', medications='[]'}, { lastName='Walker', firstName='Reginold', birthdate='08/30/1979', allergies='[illisoxian]', medications='[thradox:700mg]'}, { lastName='Peters', firstName='Jamie', birthdate='03/06/1982', allergies='[]', medications='[]'}, { lastName='Peters', firstName='Ron', birthdate='04/06/1965', allergies='[]', medications='[]'}, { lastName='Boyd', firstName='Allison', birthdate='03/15/1965', allergies='[nillacilan]', medications='[aznol:200mg]'}, { lastName='Stelzer', firstName='Brian', birthdate='12/06/1975', allergies='[nillacilan]', medications='[ibupurin:200mg, hydrapermazol:400mg]'}, { lastName='Stelzer', firstName='Shawna', birthdate='07/08/1980', allergies='[]', medications='[]'}, { lastName='Stelzer', firstName='Kendrik', birthdate='03/06/2014', allergies='[]', medications='[noxidian:100mg, pharmacol:2500mg]'}, { lastName='Ferguson', firstName='Clive', birthdate='03/06/1994', allergies='[]', medications='[]'}, { lastName='Cadigan', firstName='Eric', birthdate='08/06/1945', allergies='[]', medications='[tradoxidine:400mg]'}, { lastName='NEW LastName', firstName='NEW FirstName', birthdate='01/01/2000', allergies='[NEW ALLERGY:Allergie1]', medications='[NEW MEDICATION:Medication1]'}]</message>
+</record>
+<record>
+  <date>2023-05-18T12:21:09.290669Z</date>
+  <millis>1684412469290</millis>
+  <nanos>669000</nanos>
+  <sequence>30</sequence>
+  <logger>com.openclassrooms.safetynet.controller.MedicalrecordsController</logger>
+  <level>INFO</level>
+  <class>com.openclassrooms.safetynet.controller.MedicalrecordsController</class>
+  <method>updateMedicalrecords</method>
+  <thread>1</thread>
+  <message>Request - put medicalrecords for : { lastName='Zemicks', firstName='Warren', birthdate='01/01/2000', allergies='[NEW ALLERGY:Allergie1]', medications='[NEW MEDICATION:Medication1]'}</message>
+</record>
+<record>
+  <date>2023-05-18T12:21:09.291670300Z</date>
+  <millis>1684412469291</millis>
+  <nanos>670300</nanos>
+  <sequence>31</sequence>
+  <logger>com.openclassrooms.safetynet.controller.MedicalrecordsController</logger>
+  <level>INFO</level>
+  <class>com.openclassrooms.safetynet.controller.MedicalrecordsController</class>
+  <method>updateMedicalrecords</method>
+  <thread>1</thread>
+  <message>Response - put medicalrecords OK for : { lastName='Zemicks', firstName='Warren', birthdate='01/01/2000', allergies='[NEW ALLERGY:Allergie1]', medications='[NEW MEDICATION:Medication1]'}</message>
+</record>
+<record>
+  <date>2023-05-18T12:21:09.298229200Z</date>
+  <millis>1684412469298</millis>
+  <nanos>229200</nanos>
+  <sequence>32</sequence>
+  <logger>com.openclassrooms.safetynet.controller.MedicalrecordsController</logger>
+  <level>INFO</level>
+  <class>com.openclassrooms.safetynet.controller.MedicalrecordsController</class>
+  <method>updateMedicalrecords</method>
+  <thread>1</thread>
+  <message>Request - put medicalrecords for : { lastName='lastName NOT IN DATA', firstName='firstName NOT IN DATA', birthdate='01/01/2000', allergies='[NEW ALLERGY:Allergie1]', medications='[NEW MEDICATION:Medication1]'}</message>
+</record>
+<record>
+  <date>2023-05-18T12:21:09.298727400Z</date>
+  <millis>1684412469298</millis>
+  <nanos>727400</nanos>
+  <sequence>33</sequence>
+  <logger>com.openclassrooms.safetynet.controller.MedicalrecordsController</logger>
+  <level>WARNING</level>
+  <class>com.openclassrooms.safetynet.controller.MedicalrecordsController</class>
+  <method>updateMedicalrecords</method>
+  <thread>1</thread>
+  <message>Response - put medicalrecords KO for : { lastName='lastName NOT IN DATA', firstName='firstName NOT IN DATA', birthdate='01/01/2000', allergies='[NEW ALLERGY:Allergie1]', medications='[NEW MEDICATION:Medication1]'}</message>
+</record>
+<record>
+  <date>2023-05-18T12:21:09.303619700Z</date>
+  <millis>1684412469303</millis>
+  <nanos>619700</nanos>
+  <sequence>34</sequence>
+  <logger>com.openclassrooms.safetynet.controller.MedicalrecordsController</logger>
+  <level>INFO</level>
+  <class>com.openclassrooms.safetynet.controller.MedicalrecordsController</class>
+  <method>deleteMedicalrecord</method>
+  <thread>1</thread>
+  <message>Request - delete medicalrecords for : { lastName='Peters', firstName='Jamie', birthdate='03/06/1982', allergies='[]', medications='[]'}</message>
+</record>
+<record>
+  <date>2023-05-18T12:21:09.305003400Z</date>
+  <millis>1684412469305</millis>
+  <nanos>3400</nanos>
+  <sequence>35</sequence>
+  <logger>com.openclassrooms.safetynet.controller.MedicalrecordsController</logger>
+  <level>INFO</level>
+  <class>com.openclassrooms.safetynet.controller.MedicalrecordsController</class>
+  <method>deleteMedicalrecord</method>
+  <thread>1</thread>
+  <message>Request - delete medicalrecords OK for : { lastName='Peters', firstName='Jamie', birthdate='03/06/1982', allergies='[]', medications='[]'}</message>
+</record>
+<record>
+  <date>2023-05-18T12:21:09.310003600Z</date>
+  <millis>1684412469310</millis>
+  <nanos>3600</nanos>
+  <sequence>36</sequence>
+  <logger>com.openclassrooms.safetynet.controller.MedicalrecordsController</logger>
+  <level>INFO</level>
+  <class>com.openclassrooms.safetynet.controller.MedicalrecordsController</class>
+  <method>addMedicalrecords</method>
+  <thread>1</thread>
+  <message>Request - post medicalrecords for : { lastName='Zemicks', firstName='Warren', birthdate='03/06/1985', allergies='[NEW ALLERGY:Allergie1]', medications='[NEW MEDICATION:Medication1]'}</message>
+</record>
+<record>
+  <date>2023-05-18T12:21:09.311005Z</date>
+  <millis>1684412469311</millis>
+  <nanos>5000</nanos>
+  <sequence>37</sequence>
+  <logger>com.openclassrooms.safetynet.controller.MedicalrecordsController</logger>
+  <level>WARNING</level>
+  <class>com.openclassrooms.safetynet.controller.MedicalrecordsController</class>
+  <method>addMedicalrecords</method>
+  <thread>1</thread>
+  <message>Response - post medicalrecords KO for : { lastName='Zemicks', firstName='Warren', birthdate='03/06/1985', allergies='[NEW ALLERGY:Allergie1]', medications='[NEW MEDICATION:Medication1]'}</message>
+</record>
+<record>
+  <date>2023-05-18T12:21:09.324147300Z</date>
+  <millis>1684412469324</millis>
+  <nanos>147300</nanos>
+  <sequence>38</sequence>
+  <logger>com.openclassrooms.safetynet.controller.PersonController</logger>
+  <level>INFO</level>
+  <class>com.openclassrooms.safetynet.controller.PersonController</class>
+  <method>getPersonInfo</method>
+  <thread>1</thread>
+  <message>Request - Person info with firstname = Tessa, lastname=Carman</message>
+</record>
+<record>
+  <date>2023-05-18T12:21:09.325134100Z</date>
+  <millis>1684412469325</millis>
+  <nanos>134100</nanos>
+  <sequence>39</sequence>
+  <logger>com.openclassrooms.safetynet.controller.PersonController</logger>
+  <level>INFO</level>
+  <class>com.openclassrooms.safetynet.controller.PersonController</class>
+  <method>getPersonInfo</method>
+  <thread>1</thread>
+  <message>Response - personInfo for Tessa Carman=[com.openclassrooms.safetynet.model.PersonInfo@2af781f3]</message>
+</record>
+<record>
+  <date>2023-05-18T12:21:09.338844700Z</date>
+  <millis>1684412469338</millis>
+  <nanos>844700</nanos>
+  <sequence>40</sequence>
+  <logger>com.openclassrooms.safetynet.controller.PersonController</logger>
+  <level>INFO</level>
+  <class>com.openclassrooms.safetynet.controller.PersonController</class>
+  <method>addPerson</method>
+  <thread>1</thread>
+  <message>Request - addPerson : { lastName='NEWlastName', firstName='NEWfirstName', address='myaddress', city='mycity', zip='myzip', phone='myphone', email='email@email.com'}</message>
+</record>
+<record>
+  <date>2023-05-18T12:21:09.340011400Z</date>
+  <millis>1684412469340</millis>
+  <nanos>11400</nanos>
+  <sequence>41</sequence>
+  <logger>com.openclassrooms.safetynet.controller.PersonController</logger>
+  <level>INFO</level>
+  <class>com.openclassrooms.safetynet.controller.PersonController</class>
+  <method>addPerson</method>
+  <thread>1</thread>
+  <message>Response - addPerson OK: { lastName='NEWlastName', firstName='NEWfirstName', address='myaddress', city='mycity', zip='myzip', phone='myphone', email='email@email.com'}</message>
+</record>
+<record>
+  <date>2023-05-18T12:21:09.350105200Z</date>
+  <millis>1684412469350</millis>
+  <nanos>105200</nanos>
+  <sequence>42</sequence>
+  <logger>com.openclassrooms.safetynet.controller.PersonController</logger>
+  <level>INFO</level>
+  <class>com.openclassrooms.safetynet.controller.PersonController</class>
+  <method>deletePerson</method>
+  <thread>1</thread>
+  <message>Request - deletePerson : Eric Cadigan</message>
+</record>
+<record>
+  <date>2023-05-18T12:21:09.351280600Z</date>
+  <millis>1684412469351</millis>
+  <nanos>280600</nanos>
+  <sequence>43</sequence>
+  <logger>com.openclassrooms.safetynet.controller.PersonController</logger>
+  <level>INFO</level>
+  <class>com.openclassrooms.safetynet.controller.PersonController</class>
+  <method>deletePerson</method>
+  <thread>1</thread>
+  <message>Response - deletePerson OK: Eric Cadigan</message>
+</record>
+<record>
+  <date>2023-05-18T12:21:09.358705Z</date>
+  <millis>1684412469358</millis>
+  <nanos>705000</nanos>
+  <sequence>44</sequence>
+  <logger>com.openclassrooms.safetynet.controller.PersonController</logger>
+  <level>INFO</level>
+  <class>com.openclassrooms.safetynet.controller.PersonController</class>
+  <method>getChildFromAddress</method>
+  <thread>1</thread>
+  <message>Request - getChildFromAddress with address : 947 E. Rose Dr</message>
+</record>
+<record>
+  <date>2023-05-18T12:21:09.359481400Z</date>
+  <millis>1684412469359</millis>
+  <nanos>481400</nanos>
+  <sequence>45</sequence>
+  <logger>com.openclassrooms.safetynet.controller.PersonController</logger>
+  <level>INFO</level>
+  <class>com.openclassrooms.safetynet.controller.PersonController</class>
+  <method>getChildFromAddress</method>
+  <thread>1</thread>
+  <message>Response - getChildFromAddress with address :  947 E. Rose Dr=[com.openclassrooms.safetynet.model.ChildAdress@12aa9370]</message>
+</record>
+<record>
+  <date>2023-05-18T12:21:09.367867600Z</date>
+  <millis>1684412469367</millis>
+  <nanos>867600</nanos>
+  <sequence>46</sequence>
+  <logger>com.openclassrooms.safetynet.controller.PersonController</logger>
+  <level>INFO</level>
+  <class>com.openclassrooms.safetynet.controller.PersonController</class>
+  <method>getChildFromAddress</method>
+  <thread>1</thread>
+  <message>Request - getChildFromAddress with address : Address NOT IN DATA</message>
+</record>
+<record>
+  <date>2023-05-18T12:21:09.367867600Z</date>
+  <millis>1684412469367</millis>
+  <nanos>867600</nanos>
+  <sequence>47</sequence>
+  <logger>com.openclassrooms.safetynet.controller.PersonController</logger>
+  <level>WARNING</level>
+  <class>com.openclassrooms.safetynet.controller.PersonController</class>
+  <method>getChildFromAddress</method>
+  <thread>1</thread>
+  <message>Response - Wrong entry - getChildFromAddress with address : Address NOT IN DATA</message>
+</record>
+<record>
+  <date>2023-05-18T12:21:09.374501300Z</date>
+  <millis>1684412469374</millis>
+  <nanos>501300</nanos>
+  <sequence>48</sequence>
+  <logger>com.openclassrooms.safetynet.controller.PersonController</logger>
+  <level>INFO</level>
+  <class>com.openclassrooms.safetynet.controller.PersonController</class>
+  <method>getPersonInfo</method>
+  <thread>1</thread>
+  <message>Request - Person info with firstname = firstName NOT IN DATA, lastname=lastName NOT IN DATA</message>
+</record>
+<record>
+  <date>2023-05-18T12:21:09.375447700Z</date>
+  <millis>1684412469375</millis>
+  <nanos>447700</nanos>
+  <sequence>49</sequence>
+  <logger>com.openclassrooms.safetynet.controller.PersonController</logger>
+  <level>WARNING</level>
+  <class>com.openclassrooms.safetynet.controller.PersonController</class>
+  <method>getPersonInfo</method>
+  <thread>1</thread>
+  <message>Response - Wrong entry - personInfo : firstName NOT IN DATA lastName NOT IN DATA</message>
+</record>
+<record>
+  <date>2023-05-18T12:21:09.381862200Z</date>
+  <millis>1684412469381</millis>
+  <nanos>862200</nanos>
+  <sequence>50</sequence>
+  <logger>com.openclassrooms.safetynet.controller.PersonController</logger>
+  <level>INFO</level>
+  <class>com.openclassrooms.safetynet.controller.PersonController</class>
+  <method>addPerson</method>
+  <thread>1</thread>
+  <message>Request - addPerson : { lastName='Boyd', firstName='John', address='1509 Culver St', city='Culver', zip='97451', phone='841-874-6512', email='jaboyd@email.com'}</message>
+</record>
+<record>
+  <date>2023-05-18T12:21:09.382862700Z</date>
+  <millis>1684412469382</millis>
+  <nanos>862700</nanos>
+  <sequence>51</sequence>
+  <logger>com.openclassrooms.safetynet.controller.PersonController</logger>
+  <level>WARNING</level>
+  <class>com.openclassrooms.safetynet.controller.PersonController</class>
+  <method>addPerson</method>
+  <thread>1</thread>
+  <message>Response - addPerson KO: { lastName='Boyd', firstName='John', address='1509 Culver St', city='Culver', zip='97451', phone='841-874-6512', email='jaboyd@email.com'}</message>
+</record>
+<record>
+  <date>2023-05-18T12:21:09.390607200Z</date>
+  <millis>1684412469390</millis>
+  <nanos>607200</nanos>
+  <sequence>52</sequence>
+  <logger>com.openclassrooms.safetynet.controller.PersonController</logger>
+  <level>INFO</level>
+  <class>com.openclassrooms.safetynet.controller.PersonController</class>
+  <method>updatePerson</method>
+  <thread>1</thread>
+  <message>Request - updatePerson : { lastName='Boyd', firstName='John', address='NEW Address', city='Culver', zip='97451', phone='841-874-6512', email='NEWMAIL@email.com'}</message>
+</record>
+<record>
+  <date>2023-05-18T12:21:09.391170200Z</date>
+  <millis>1684412469391</millis>
+  <nanos>170200</nanos>
+  <sequence>53</sequence>
+  <logger>com.openclassrooms.safetynet.controller.PersonController</logger>
+  <level>INFO</level>
+  <class>com.openclassrooms.safetynet.controller.PersonController</class>
+  <method>updatePerson</method>
+  <thread>1</thread>
+  <message>Response - updatePerson OK: { lastName='Boyd', firstName='John', address='NEW Address', city='Culver', zip='97451', phone='841-874-6512', email='NEWMAIL@email.com'}</message>
+</record>
+<record>
+  <date>2023-05-18T12:21:09.397330700Z</date>
+  <millis>1684412469397</millis>
+  <nanos>330700</nanos>
+  <sequence>54</sequence>
+  <logger>com.openclassrooms.safetynet.controller.PersonController</logger>
+  <level>INFO</level>
+  <class>com.openclassrooms.safetynet.controller.PersonController</class>
+  <method>getCommunityEmail</method>
+  <thread>1</thread>
+  <message>Request - getCommunityEmail with city : city NOT IN DATA</message>
+</record>
+<record>
+  <date>2023-05-18T12:21:09.397330700Z</date>
+  <millis>1684412469397</millis>
+  <nanos>330700</nanos>
+  <sequence>55</sequence>
+  <logger>com.openclassrooms.safetynet.controller.PersonController</logger>
+  <level>WARNING</level>
+  <class>com.openclassrooms.safetynet.controller.PersonController</class>
+  <method>getCommunityEmail</method>
+  <thread>1</thread>
+  <message>ResponseWrong entry - communityEmail with city : city NOT IN DATA</message>
+</record>
+<record>
+  <date>2023-05-18T12:21:09.402334100Z</date>
+  <millis>1684412469402</millis>
+  <nanos>334100</nanos>
+  <sequence>56</sequence>
+  <logger>com.openclassrooms.safetynet.controller.PersonController</logger>
+  <level>INFO</level>
+  <class>com.openclassrooms.safetynet.controller.PersonController</class>
+  <method>deletePerson</method>
+  <thread>1</thread>
+  <message>Request - deletePerson : firstName NOT IN DATA lastName NOT IN DATA</message>
+</record>
+<record>
+  <date>2023-05-18T12:21:09.402334100Z</date>
+  <millis>1684412469402</millis>
+  <nanos>334100</nanos>
+  <sequence>57</sequence>
+  <logger>com.openclassrooms.safetynet.controller.PersonController</logger>
+  <level>WARNING</level>
+  <class>com.openclassrooms.safetynet.controller.PersonController</class>
+  <method>deletePerson</method>
+  <thread>1</thread>
+  <message>Response - deletePerson KO: firstName NOT IN DATA lastName NOT IN DATA</message>
+</record>
+<record>
+  <date>2023-05-18T12:21:09.408413200Z</date>
+  <millis>1684412469408</millis>
+  <nanos>413200</nanos>
+  <sequence>58</sequence>
+  <logger>com.openclassrooms.safetynet.controller.PersonController</logger>
+  <level>INFO</level>
+  <class>com.openclassrooms.safetynet.controller.PersonController</class>
+  <method>getCommunityEmail</method>
+  <thread>1</thread>
+  <message>Request - getCommunityEmail with city : Culver</message>
+</record>
+<record>
+  <date>2023-05-18T12:21:09.408413200Z</date>
+  <millis>1684412469408</millis>
+  <nanos>413200</nanos>
+  <sequence>59</sequence>
+  <logger>com.openclassrooms.safetynet.controller.PersonController</logger>
+  <level>INFO</level>
+  <class>com.openclassrooms.safetynet.controller.PersonController</class>
+  <method>getCommunityEmail</method>
+  <thread>1</thread>
+  <message>Response - getCommunityEmail for Culver=[NEWMAIL@email.com, drk@email.com, tenz@email.com, jaboyd@email.com, tcoop@ymail.com, lily@email.com, soph@email.com, ward@email.com, zarc@email.com, reg@email.com, jpeter@email.com, aly@imail.com, bstel@email.com, ssanw@email.com, clivfd@ymail.com]</message>
+</record>
+<record>
+  <date>2023-05-18T12:21:09.414409900Z</date>
+  <millis>1684412469414</millis>
+  <nanos>409900</nanos>
+  <sequence>60</sequence>
+  <logger>com.openclassrooms.safetynet.controller.PersonController</logger>
+  <level>INFO</level>
+  <class>com.openclassrooms.safetynet.controller.PersonController</class>
+  <method>updatePerson</method>
+  <thread>1</thread>
+  <message>Request - updatePerson : { lastName='lastName NOT IN DATA', firstName='firstName NOT IN DATA', address='NEW Address', city='Culver', zip='97451', phone='841-874-6512', email='NEWMAIL@email.com'}</message>
+</record>
+<record>
+  <date>2023-05-18T12:21:09.414409900Z</date>
+  <millis>1684412469414</millis>
+  <nanos>409900</nanos>
+  <sequence>61</sequence>
+  <logger>com.openclassrooms.safetynet.controller.PersonController</logger>
+  <level>WARNING</level>
+  <class>com.openclassrooms.safetynet.controller.PersonController</class>
+  <method>updatePerson</method>
+  <thread>1</thread>
+  <message>Response - updatePerson KO: { lastName='lastName NOT IN DATA', firstName='firstName NOT IN DATA', address='NEW Address', city='Culver', zip='97451', phone='841-874-6512', email='NEWMAIL@email.com'}</message>
+</record>
+</log>

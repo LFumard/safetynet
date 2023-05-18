@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="fr"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Medicalrecords.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">safetynet</a> &gt; <a href="index.source.html" class="el_package">com.openclassrooms.safetynet.model</a> &gt; <span class="el_source">Medicalrecords.java</span></div><h1>Medicalrecords.java</h1><pre class="source lang-java linenums">package com.openclassrooms.safetynet.model;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import org.springframework.stereotype.Component;
+
+@Component
+public class Medicalrecords {
+	private String firstName;
+	private String lastName;
+	private String birthdate;
+	private List&lt;String&gt; medications;
+	private List&lt;String&gt; allergies;
+	
+<span class="fc" id="L16">	public Medicalrecords(String firstName, String lastName, String birthDate, List&lt;String&gt; medication, List&lt;String&gt; allergie) {</span>
+<span class="fc" id="L17">		this.firstName = firstName;</span>
+<span class="fc" id="L18">		this.lastName = lastName;</span>
+<span class="fc" id="L19">		this.birthdate = birthDate;</span>
+<span class="fc" id="L20">		this.medications = new ArrayList&lt;&gt;(); </span>
+<span class="fc" id="L21">		this.medications = medication;</span>
+<span class="fc" id="L22">		this.allergies = new ArrayList&lt;&gt;();</span>
+<span class="fc" id="L23">		this.allergies = allergie;</span>
+<span class="fc" id="L24">	}</span>
+	
+<span class="fc" id="L26">	public Medicalrecords() {</span>
+<span class="fc" id="L27">	}</span>
+	public String getFirstName() {
+<span class="fc" id="L29">		return firstName;</span>
+	}
+	public void setFirstName(String firstName) {
+<span class="fc" id="L32">		this.firstName = firstName;</span>
+<span class="fc" id="L33">	}</span>
+	public String getLastName() {
+<span class="fc" id="L35">		return lastName;</span>
+	}
+	public void setLastName(String lastName) {
+<span class="fc" id="L38">		this.lastName = lastName;</span>
+<span class="fc" id="L39">	}</span>
+	public String getBirthdate() {
+<span class="fc" id="L41">		return birthdate;</span>
+	}
+	public void setBirthdate(String birthdate) {
+<span class="fc" id="L44">		this.birthdate = birthdate;</span>
+<span class="fc" id="L45">	}</span>
+	public List&lt;String&gt; getMedications() {
+<span class="fc" id="L47">		return medications;</span>
+	}
+	public void setMedications(List&lt;String&gt; medications) {
+<span class="fc" id="L50">		this.medications = medications;</span>
+<span class="fc" id="L51">	}</span>
+	public List&lt;String&gt; getAllergies() {
+<span class="fc" id="L53">		return allergies;</span>
+	}
+	public void setAllergies(List&lt;String&gt; allergies) {
+<span class="fc" id="L56">		this.allergies = allergies;</span>
+<span class="fc" id="L57">	}</span>
+	
+	@Override
+	public boolean equals(Object obj) {
+<span class="fc bfc" id="L61" title="All 2 branches covered.">			if(obj == this) </span>
+<span class="fc" id="L62">				return true;</span>
+<span class="fc" id="L63">			return(this.toString().equals(obj.toString()));</span>
+	}
+	@Override
+	public String toString() {
+<span class="fc" id="L67">		return &quot;{&quot; +</span>
+        &quot; lastName='&quot; + lastName + '\'' +
+        &quot;, firstName='&quot; + firstName + '\'' +
+        &quot;, birthdate='&quot; + birthdate + '\'' +
+        &quot;, allergies='&quot; + allergies + '\'' +
+        &quot;, medications='&quot; + medications + '\'' +
+        '}';
+	}
+	
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.8.202204050719</span></div></body></html>

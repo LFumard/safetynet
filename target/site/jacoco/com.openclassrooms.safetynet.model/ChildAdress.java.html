@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="fr"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>ChildAdress.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">safetynet</a> &gt; <a href="index.source.html" class="el_package">com.openclassrooms.safetynet.model</a> &gt; <span class="el_source">ChildAdress.java</span></div><h1>ChildAdress.java</h1><pre class="source lang-java linenums">package com.openclassrooms.safetynet.model;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import org.springframework.stereotype.Component;
+
+@Component
+<span class="fc" id="L9">public class ChildAdress {</span>
+	private String firstName;
+	private String lastName;
+	private String address;	
+	private int age;
+<span class="fc" id="L14">	private List&lt;FoyerAdress&gt; foyerAdress = new ArrayList&lt;&gt;();</span>
+	
+	public String getFirstName() {
+<span class="fc" id="L17">		return firstName;</span>
+	}
+	public void setFirstName(String firstName) {
+<span class="fc" id="L20">		this.firstName = firstName;</span>
+<span class="fc" id="L21">	}</span>
+	public String getLastName() {
+<span class="fc" id="L23">		return lastName;</span>
+	}
+	public void setLastName(String lastName) {
+<span class="fc" id="L26">		this.lastName = lastName;</span>
+<span class="fc" id="L27">	}</span>
+	public String getAddress() {
+<span class="fc" id="L29">		return address;</span>
+	}
+	public void setAddress(String address) {
+<span class="fc" id="L32">		this.address = address;</span>
+<span class="fc" id="L33">	}</span>
+	public int getAge() {
+<span class="fc" id="L35">		return age;</span>
+	}
+	public void setAge(int age) {
+<span class="fc" id="L38">		this.age = age;</span>
+<span class="fc" id="L39">	}</span>
+	public List&lt;FoyerAdress&gt; getFoyerAdress() {
+<span class="fc" id="L41">		return foyerAdress;</span>
+	}
+	public void setFoyerAdress(List&lt;FoyerAdress&gt; foyerAdress) {
+<span class="fc" id="L44">		this.foyerAdress = foyerAdress;</span>
+<span class="fc" id="L45">	}</span>
+}
+
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.8.202204050719</span></div></body></html>

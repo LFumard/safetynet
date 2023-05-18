@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="fr"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>FirestationServiceImpl.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">safetynet</a> &gt; <a href="index.source.html" class="el_package">com.openclassrooms.safetynet.services</a> &gt; <span class="el_source">FirestationServiceImpl.java</span></div><h1>FirestationServiceImpl.java</h1><pre class="source lang-java linenums">package com.openclassrooms.safetynet.services;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+import org.springframework.stereotype.Service;
+
+import com.openclassrooms.safetynet.model.FireAddress;
+import com.openclassrooms.safetynet.model.Firestations;
+import com.openclassrooms.safetynet.model.People;
+import com.openclassrooms.safetynet.model.Person;
+import com.openclassrooms.safetynet.model.PersonFireAddress;
+import com.openclassrooms.safetynet.model.PersonStationNumber;
+import com.openclassrooms.safetynet.repository.FireStationRepository;
+import com.openclassrooms.safetynet.repository.MedicalRecordRepository;
+import com.openclassrooms.safetynet.repository.PersonRepository;
+
+
+
+@Service
+public class FirestationServiceImpl implements FirestationsService {
+
+<span class="fc" id="L25">	private static final Logger logger = LogManager.getLogger(FirestationServiceImpl.class);</span>
+	
+	private final FireStationRepository fireStationRepository;
+	private final MedicalRecordRepository medicalRecordRepository;
+	private final PersonRepository personRepository;
+	private final MedicalrecordsService medicalrecordsService;
+	
+<span class="fc" id="L32">	public FirestationServiceImpl(FireStationRepository fireStationRepository, MedicalRecordRepository medicalRecordRepository, PersonRepository personRepository, MedicalrecordsService medicalrecordsService) {</span>
+<span class="fc" id="L33">		this.fireStationRepository = fireStationRepository;</span>
+<span class="fc" id="L34">		this.medicalRecordRepository = medicalRecordRepository;</span>
+<span class="fc" id="L35">		this.personRepository = personRepository;</span>
+<span class="fc" id="L36">		this.medicalrecordsService = medicalrecordsService;</span>
+<span class="fc" id="L37">	}</span>
+	
+	@Override
+	public Firestations addFireStation(Firestations fireStation) { 
+<span class="fc bfc" id="L41" title="All 2 branches covered.">		for(int i = 0; i &lt; fireStationRepository.getFirestations().size(); i++) {</span>
+<span class="fc bfc" id="L42" title="All 2 branches covered.">			if(fireStationRepository.getFirestations().get(i).getAddress().equals(fireStation.getAddress())) {</span>
+<span class="fc" id="L43">				logger.info(&quot;Default to add a FireStation (already exist) : &quot; + fireStation.getAddress());</span>
+<span class="fc" id="L44">				return null;</span>
+			}
+		}
+<span class="pc bpc" id="L47" title="1 of 2 branches missed.">		if(fireStationRepository.add(fireStation)) {</span>
+<span class="fc" id="L48">			logger.info(&quot;Add a FireStation : &quot; + fireStation.getAddress());</span>
+<span class="fc" id="L49">			return fireStation;</span>
+		}
+		else {
+<span class="nc" id="L52">			logger.info(&quot;Default to add a FireStation : &quot; + fireStation.getAddress());</span>
+<span class="nc" id="L53">        	return null;</span>
+        }
+	}
+
+	@Override
+	public Firestations updateFireStation(Firestations fireStation) {
+<span class="fc bfc" id="L59" title="All 2 branches covered.">		for(int i = 0; i &lt; fireStationRepository.getFirestations().size(); i++) {</span>
+<span class="fc bfc" id="L60" title="All 2 branches covered.">			if(fireStationRepository.getFirestations().get(i).getStation().equals(fireStation.getStation())) {</span>
+<span class="pc bpc" id="L61" title="1 of 2 branches missed.">				if(fireStationRepository.updateFirestations(i,fireStation) != null) {</span>
+<span class="fc" id="L62">					logger.info(&quot;Update a FireStation : &quot; + fireStation.getAddress());</span>
+<span class="fc" id="L63">					return fireStation;</span>
+				}
+				else {
+<span class="nc" id="L66">					logger.info(&quot;Default to update a FireStation : &quot; + fireStation.getAddress());</span>
+<span class="nc" id="L67">		        	return null;</span>
+				}
+			}
+		}
+<span class="fc" id="L71">		logger.info(&quot;Default to update a FireStation (FireStation not exist) : &quot; + fireStation.getAddress());</span>
+<span class="fc" id="L72">		return null;</span>
+	}
+
+
+	@Override
+	public Firestations deleteFireStation(Firestations fireStation) {
+<span class="fc bfc" id="L78" title="All 2 branches covered.">		for(int i = 0; i &lt; fireStationRepository.getFirestations().size(); i++) {</span>
+<span class="fc bfc" id="L79" title="All 2 branches covered.">			if(fireStationRepository.getFirestations().get(i).getAddress().equals(fireStation.getAddress())) {</span>
+<span class="pc bpc" id="L80" title="1 of 2 branches missed.">				if(fireStationRepository.remove(fireStation)) {</span>
+<span class="fc" id="L81">					logger.info(&quot;Delete FireStation : &quot; + fireStation.getAddress());</span>
+<span class="fc" id="L82">					return fireStation;</span>
+				}
+				else {
+<span class="nc" id="L85">					logger.info(&quot;Default to delete a FireStation : &quot; + fireStation.getAddress());</span>
+<span class="nc" id="L86">		        	return null;</span>
+				}
+			}
+		}
+<span class="fc" id="L90">		logger.info(&quot;Default to delete a FireStation (FireStation not exist) : &quot; + fireStation.getAddress());</span>
+<span class="fc" id="L91">		return null;</span>
+	}
+
+	@Override
+	public List&lt;PersonStationNumber&gt; getPersonFromStation(List&lt;String&gt; station_number) {
+		List&lt;String&gt; lstAddressFromStation;
+		List&lt;Person&gt; lstPersonFromAddress;
+		
+<span class="fc" id="L99">		lstAddressFromStation = fireStationRepository.getAddressByStationNumber(station_number.get(0));</span>
+<span class="fc bfc" id="L100" title="All 2 branches covered.">		if(lstAddressFromStation == null) {</span>
+<span class="fc" id="L101">			logger.info(&quot;No FireStation at this Station number&quot;);</span>
+<span class="fc" id="L102">			return null;</span>
+		}
+		
+<span class="fc" id="L105">		lstPersonFromAddress = personRepository.getPersonByAddress(lstAddressFromStation);</span>
+<span class="pc bpc" id="L106" title="1 of 2 branches missed.">		if(lstPersonFromAddress == null) {</span>
+<span class="nc" id="L107">			logger.info(&quot;No Person for the address at this Station number : &quot; + station_number.get(0));</span>
+<span class="nc" id="L108">			return null;</span>
+		}
+		
+<span class="fc" id="L111">		int nbAdult = 0;</span>
+<span class="fc" id="L112">		int nbChlid = 0;</span>
+<span class="fc" id="L113">		List&lt;People&gt; lstPeople = new ArrayList&lt;&gt;();</span>
+<span class="fc bfc" id="L114" title="All 2 branches covered.">		for(int iPerson = 0; iPerson &lt; lstPersonFromAddress.size(); iPerson++) {</span>
+<span class="fc" id="L115">			People peopleAdress = new People();</span>
+<span class="fc" id="L116">			peopleAdress.setFirstName(lstPersonFromAddress.get(iPerson).getFirstName());</span>
+<span class="fc" id="L117">			peopleAdress.setLastName(lstPersonFromAddress.get(iPerson).getLastName());</span>
+<span class="fc" id="L118">			peopleAdress.setAddress(lstPersonFromAddress.get(iPerson).getAddress());</span>
+<span class="fc" id="L119">			peopleAdress.setPhone(lstPersonFromAddress.get(iPerson).getPhone());</span>
+<span class="fc" id="L120">			lstPeople.add(peopleAdress);</span>
+<span class="fc bfc" id="L121" title="All 2 branches covered.">			if(medicalrecordsService.isAChild(lstPersonFromAddress.get(iPerson)))</span>
+<span class="fc" id="L122">				nbChlid++;</span>
+<span class="fc" id="L123">			else nbAdult++;</span>
+		}
+		
+<span class="fc" id="L126">		List&lt;PersonStationNumber&gt; personStation = new ArrayList&lt;&gt;();</span>
+<span class="fc" id="L127">		PersonStationNumber personStationNumber = new PersonStationNumber();</span>
+<span class="fc" id="L128">		personStationNumber.setPeople(lstPeople);</span>
+<span class="fc" id="L129">		personStationNumber.setNumberAdult(nbAdult);</span>
+<span class="fc" id="L130">		personStationNumber.setNumberChild(nbChlid);</span>
+<span class="fc" id="L131">		personStation.add(personStationNumber);</span>
+<span class="fc" id="L132">		return personStation;</span>
+	}
+
+	@Override
+	public List&lt;String&gt; getPhonePersonFromStation(List&lt;String&gt; station_number) {
+		
+		List&lt;String&gt; lstAddressFromStation;
+		List&lt;Person&gt; lstPersonFromAddress;
+	
+	
+<span class="fc" id="L142">		lstAddressFromStation = fireStationRepository.getAddressByStationNumber(station_number.get(0));</span>
+<span class="fc bfc" id="L143" title="All 2 branches covered.">		if(lstAddressFromStation == null) {</span>
+<span class="fc" id="L144">			logger.info(&quot;No FireStation at this Station number&quot;);</span>
+<span class="fc" id="L145">			return null;</span>
+		}
+	
+<span class="fc" id="L148">		lstPersonFromAddress = personRepository.getPersonByAddress(lstAddressFromStation);</span>
+<span class="pc bpc" id="L149" title="1 of 2 branches missed.">		if(lstPersonFromAddress == null) {</span>
+<span class="nc" id="L150">			logger.info(&quot;No Person for the address at this Station number : &quot; + station_number.get(0));</span>
+<span class="nc" id="L151">			return null;</span>
+		}
+	
+<span class="fc" id="L154">		List&lt;String&gt; lspPersonPhoneNumber = new ArrayList&lt;&gt;();</span>
+<span class="fc bfc" id="L155" title="All 2 branches covered.">		for(int iPerson = 0; iPerson &lt; lstPersonFromAddress.size(); iPerson++) {</span>
+<span class="fc bfc" id="L156" title="All 2 branches covered.">			if(!lspPersonPhoneNumber.contains(lstPersonFromAddress.get(iPerson).getPhone()))</span>
+<span class="fc" id="L157">				lspPersonPhoneNumber.add(lstPersonFromAddress.get(iPerson).getPhone());</span>
+		}
+<span class="fc" id="L159">		return lspPersonPhoneNumber;</span>
+	}
+
+	@Override
+	public List&lt;PersonFireAddress&gt; getpersonFromAddress(List&lt;String&gt; lstAddress) {
+		
+		List&lt;Person&gt; lstPersonFromAddress;
+		
+<span class="fc" id="L167">		lstPersonFromAddress = personRepository.getPersonByAddress(lstAddress);</span>
+<span class="fc bfc" id="L168" title="All 2 branches covered.">		if(lstPersonFromAddress == null) {</span>
+<span class="fc" id="L169">			logger.info(&quot;No Person for the address at this Station number&quot;);</span>
+<span class="fc" id="L170">			return null;</span>
+		}
+		
+<span class="fc" id="L173">		List&lt;PersonFireAddress&gt; personFireAddressList = new ArrayList&lt;&gt;();</span>
+<span class="fc" id="L174">		PersonFireAddress personFireAddress = new PersonFireAddress();</span>
+<span class="fc" id="L175">		List&lt;FireAddress&gt; fireAddressList = new ArrayList&lt;&gt;();</span>
+		
+<span class="fc bfc" id="L177" title="All 2 branches covered.">		for(int iPerson = 0; iPerson &lt; lstPersonFromAddress.size(); iPerson++) {</span>
+<span class="fc" id="L178">			FireAddress fireAddress = new FireAddress();</span>
+<span class="fc" id="L179">			fireAddress.setLastName(lstPersonFromAddress.get(iPerson).getLastName());</span>
+<span class="fc" id="L180">			fireAddress.setAge(medicalrecordsService.getAgeFromPerson(lstPersonFromAddress.get(iPerson)));</span>
+<span class="fc" id="L181">			fireAddress.setPhone(lstPersonFromAddress.get(iPerson).getPhone());</span>
+<span class="fc" id="L182">			fireAddress.setMedications(medicalRecordRepository.getMedicationFromPerson(lstPersonFromAddress.get(iPerson)));</span>
+<span class="fc" id="L183">			fireAddress.setAllergies(medicalRecordRepository.getAllergieFromPerson(lstPersonFromAddress.get(iPerson)));</span>
+<span class="fc" id="L184">			fireAddressList.add(fireAddress);</span>
+		}
+	
+<span class="fc" id="L187">		personFireAddress.setFireAddress(fireAddressList);</span>
+<span class="fc" id="L188">		personFireAddress.setStation(fireStationRepository.getFirestationsFromAddress(lstAddress.get(0)));</span>
+<span class="fc" id="L189">		personFireAddressList.add(personFireAddress);</span>
+<span class="fc" id="L190">		return personFireAddressList;</span>
+	}
+}
+	
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.8.202204050719</span></div></body></html>

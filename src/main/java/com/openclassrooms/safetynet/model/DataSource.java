@@ -7,6 +7,7 @@ import java.util.List;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -23,6 +24,10 @@ public class DataSource {
 	public List<Person> getPersons() {
 		return people;
 	}
+	
+	@Value("${data.jsonFilePath}")
+	private String filePath;
+	
 	public void setPersons(List<Person> persons) {
 		this.people = persons;
 	}
@@ -46,7 +51,7 @@ public class DataSource {
 		logger.info("Begin loading JSON data file");
 		try {
 			
-			byte[] jsonData = Files.readAllBytes(Paths.get("target\\classes\\data.json"));
+			byte[] jsonData = Files.readAllBytes(Paths.get(filePath));
 	
 			ObjectMapper objectMapper = new ObjectMapper();
 	
