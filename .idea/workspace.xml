@@ -5,14 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="18d63068-c83d-4d7b-b1f4-d738c4e740b8" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/openclassrooms/safetynet/SafetynetApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/openclassrooms/safetynet/SafetynetApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/openclassrooms/safetynet/controller/FirestationsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/openclassrooms/safetynet/controller/FirestationsController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/openclassrooms/safetynet/controller/MedicalrecordsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/openclassrooms/safetynet/controller/MedicalrecordsController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/openclassrooms/safetynet/controller/PersonController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/openclassrooms/safetynet/controller/PersonController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/openclassrooms/safetynet/model/DataSource.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/openclassrooms/safetynet/model/DataSource.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/openclassrooms/safetynet/services/FirestationServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/openclassrooms/safetynet/services/FirestationServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/log4j2.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/log4j.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
